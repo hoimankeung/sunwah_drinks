@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>醉美人間 —— 新華公司 ‧ 半世紀品味傳承 X 專業 MBTI 深度微醺酒館</title>
+    <title>醉美人間 —— 新華公司 ‧ 半世紀品味傳承 X 專業 60 題深度微醺酒館</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js -->
@@ -112,7 +112,7 @@
 
             <nav class="hidden lg:flex space-x-5 text-xs xl:text-sm font-medium">
                 <a href="#history" class="hover:text-amber-300 transition-colors">🏛️ 老字號故事</a>
-                <a href="#mbti-pro-section" class="hover:text-amber-300 text-amber-300 font-bold transition-colors">🧠 專業 60 題深度測驗報告</a>
+                <a href="#mbti-pro-section" class="hover:text-amber-300 text-amber-300 font-bold transition-colors">🧠 專業 60 題深度測驗</a>
                 <a href="#cultures" class="hover:text-amber-300 transition-colors">環球地圖</a>
                 <a href="#truths" class="hover:text-amber-300 transition-colors">酒後吐真言</a>
                 <a href="#dosdonts" class="hover:text-amber-300 transition-colors">宜忌指南</a>
@@ -126,7 +126,7 @@
 
         <div id="mobileMenu" class="hidden lg:hidden bg-stone-900 px-4 pt-2 pb-4 space-y-2 border-t border-stone-800 text-sm">
             <a href="#history" class="block py-1 hover:text-amber-300">🏛️ 老字號故事</a>
-            <a href="#mbti-pro-section" class="block py-1 text-amber-300 font-bold">🧠 專業 60 題深度測驗報告</a>
+            <a href="#mbti-pro-section" class="block py-1 text-amber-300 font-bold">🧠 專業 60 題深度測驗</a>
             <a href="#cultures" class="block py-1 hover:text-amber-300">環球與香港地圖</a>
             <a href="#truths" class="block py-1 hover:text-amber-300">酒後吐真言模擬器</a>
             <a href="#dosdonts" class="block py-1 hover:text-amber-300">酒後宜忌指南</a>
@@ -155,14 +155,14 @@
             </div>
 
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-amber-100 leading-tight">
-                醉美人間 ✕ 專業 60 題微醺人格報告
+                醉美人間 ✕ 專業 60 題嚴選微醺人格報告
             </h1>
             <p class="text-base sm:text-lg text-amber-200/90 leading-relaxed max-w-2xl mx-auto font-normal">
-                結合 <b>50 條正規 MBTI 關鍵題庫</b> 與 <b>10 條專業酒款偏好測試</b>，為您精準解鎖兼具性格解析與新華美酒配對的頂級全方位微醺報告。
+                精選 <b>50 條完全獨立、無重複的正規 MBTI 關鍵題庫</b> 與 <b>10 條專業酒款偏好測試</b>，為您帶來最精準的微醺品味報告。
             </p>
 
             <div class="pt-3 flex flex-wrap justify-center gap-3 text-xs sm:text-sm">
-                <a href="#mbti-pro-section" class="px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-lg shadow-xl transition-all">🧠 開始進行 60 題深度專業測驗</a>
+                <a href="#mbti-pro-section" class="px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-lg shadow-xl transition-all">🧠 開始進行 60 題專業深度測驗</a>
                 <a href="#history" class="px-5 py-3 bg-stone-800 hover:bg-stone-700 border border-amber-500/50 text-amber-200 font-bold rounded-lg transition-all">📜 閱讀新華老字號簡史</a>
             </div>
         </div>
@@ -177,12 +177,11 @@
                 
                 <div class="text-center space-y-3 border-b border-amber-200 pb-6">
                     <span class="px-3 py-1 bg-amber-100 text-amber-900 font-bold text-xs rounded-full">新華品味師 ‧ 企業級高精準測驗引擎</span>
-                    <h2 class="text-2xl sm:text-4xl font-black text-stone-900">專業 60 題微醺心智與酒款深度測驗</h2>
+                    <h2 class="text-2xl sm:text-4xl font-black text-stone-900">專業 60 題無重複深度心智與酒款測驗</h2>
                     <p class="text-xs sm:text-sm text-stone-600 max-w-2xl mx-auto">
-                        本系統分為兩階段：<b>階段一（50題）</b>評估您正規的 MBTI 四維度心智傾向；<b>階段二（10題）</b>探討您的微醺口感與飲酒偏好。完成後將交叉生成專屬您的詳細報告。
+                        包含 50 條互不相同的正規 MBTI 行為情境題與 10 條微醺偏好題。每答一題自動跳轉，確保精準度與流暢體驗。
                     </p>
                     
-                    <!-- Progress Bar Header -->
                     <div id="testProgressWrapper" class="max-w-md mx-auto pt-4">
                         <div class="flex justify-between text-xs font-bold text-amber-900 mb-1">
                             <span id="progressStageTitle">階段一：MBTI 核心心智評估 (1 / 50)</span>
@@ -194,24 +193,19 @@
                     </div>
                 </div>
 
-                <!-- Test Interactive Box -->
-                <div id="testCardBox" class="bg-stone-50 p-6 sm:p-8 rounded-xl border border-stone-200 space-y-6 max-w-3xl mx-auto">
-                    <!-- Dynamic Question Container injected by JS -->
-                </div>
+                <div id="testCardBox" class="bg-stone-50 p-6 sm:p-8 rounded-xl border border-stone-200 space-y-6 max-w-3xl mx-auto"></div>
 
-                <!-- Detailed Result Report Container (Hidden initially) -->
                 <div id="proResultReport" class="hidden space-y-8 bg-gradient-to-br from-amber-50 to-stone-100 p-6 sm:p-10 rounded-2xl border-2 border-amber-700 shadow-2xl">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-amber-300 pb-6 gap-4">
                         <div>
                             <span class="text-xs font-bold text-amber-800 uppercase tracking-widest">Sun Wah Certified Sommelier Report</span>
                             <h3 id="repTitle" class="text-3xl sm:text-4xl font-black text-stone-900 mt-1">INTJ 建築師 ✕ 橡木桶陳年專家</h3>
-                            <div class="text-xs text-stone-500 mt-1">分析依據：50題正規行為心智矩陣 ＋ 10題酒款偏好交叉比對</div>
+                            <div class="text-xs text-stone-500 mt-1">分析依據：50條無重複正規心智矩陣 ＋ 10條酒款偏好交叉比對</div>
                         </div>
                         <button onclick="restartProTest()" class="px-4 py-2 bg-stone-800 hover:bg-stone-700 text-amber-200 font-bold rounded-lg text-xs transition">🔄 重新測驗</button>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Col 1 -->
                         <div class="space-y-4">
                             <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200 space-y-2">
                                 <h4 class="font-bold text-amber-900 text-sm flex items-center gap-2"><span>🧠</span><span>1. MBTI 核心性格解析</span></h4>
@@ -223,7 +217,6 @@
                             </div>
                         </div>
 
-                        <!-- Col 2 -->
                         <div class="space-y-4">
                             <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200 space-y-2">
                                 <h4 class="font-bold text-amber-900 text-sm flex items-center gap-2"><span>✨</span><span>3. 最佳微醺場合與氣氛</span></h4>
@@ -236,7 +229,6 @@
                         </div>
                     </div>
 
-                    <!-- Hangover & Legal Notice Box inside Report -->
                     <div class="bg-stone-900 text-amber-100 p-5 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
                         <div class="space-y-1">
                             <div class="font-bold text-amber-400">🌿 新華品味師貼心提醒：</div>
@@ -282,7 +274,7 @@
                             <span>🚚</span> 1975 大角咀創業
                         </div>
                         <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
-                            創辦人<b>葉達生先生</b>與夥伴於<b>大角咀大同新邨</b>創立新華公司，憑藉即叫即送與務實打拼精神，締造高峰期全港近半士多均有新華供酒的盛況[cite: 1]。
+                            創辦人<b>葉達生先生</b>與夥伴於<b>大角咀大同新邨</b>創立新華公司，憑藉即叫即送與務實打拼精神，締造高峰期全港近半士多均有新華供酒的盛況。
                         </p>
                     </div>
 
@@ -291,7 +283,7 @@
                             <span>🍷</span> 洋酒與經典啤酒
                         </div>
                         <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
-                            深諳四大啤酒工藝與香氣特性，八十年代經濟起飛時率先引進<b>軒尼詩（Hennessy）</b>、<b>人頭馬（Rémy Martin）</b>等經典干邑洋酒，引領節慶送禮與餐飲潮流[cite: 1]。
+                            深諳四大啤酒工藝與香氣特性，八十年代經濟起飛時率先引進<b>軒尼詩（Hennessy）</b>、<b>人頭馬（Rémy Martin）</b>等經典干邑洋酒，引領節慶送禮與餐飲潮流。
                         </p>
                     </div>
 
@@ -300,7 +292,7 @@
                             <span>🤝</span> 第二代創新守業
                         </div>
                         <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
-                            第二代接棒後積極拓展品類，引進<b>珠江啤酒</b>等優質品牌，並於 2008 年把握紅酒免稅契機擴展環球名酒品類，現於<b>火炭</b>持續提供專業酒水服務[cite: 1]。
+                            第二代接棒後積極拓展品類，引進<b>珠江啤酒</b>等優質品牌，並於 2008 年把握紅酒免稅契機擴展環球名酒品類，現於<b>火炭</b>持續提供專業酒水服務。
                         </p>
                     </div>
                 </div>
@@ -538,14 +530,14 @@
                             <div class="text-[10px] text-amber-400 font-serif">SUN WAH COMPANY</div>
                         </div>
                     </div>
-                    <p class="text-stone-400 text-[11px] leading-relaxed">一九七五年大角咀起家，深耕香港半世紀。專注於環球名釀引進與高品質酒水服務[cite: 1]。</p>
+                    <p class="text-stone-400 text-[11px] leading-relaxed">一九七五年大角咀起家，深耕香港半世紀。專注於環球名釀引進與高品質酒水服務。</p>
                 </div>
 
                 <div class="space-y-1 text-stone-300">
                     <div class="font-bold text-amber-200 text-xs mb-2">🏢 企業資訊</div>
                     <p>服務營運點：香港新界火炭（專業酒水倉儲與物流）</p>
-                    <p>創業發源地：香港九龍大角咀大同新邨 (1975)[cite: 1]</p>
-                    <p>業務範疇：經典啤酒 ‧ 干邑與環球名釀進口[cite: 1]</p>
+                    <p>創業發源地：香港九龍大角咀大同新邨 (1975)</p>
+                    <p>業務範疇：經典啤酒 ‧ 干邑與環球名釀進口</p>
                 </div>
 
                 <div class="space-y-1 text-stone-300">
@@ -557,7 +549,7 @@
 
             <div class="text-center text-stone-500 text-[11px] space-y-1">
                 <p>© 1975-2026 新華公司 Sun Wah Company. All rights reserved. 版權所有</p>
-                <p>特別企劃：半世紀品味傳承 ✕ 專業 60 題 MBTI 深度微醺酒館</p>
+                <p>特別企劃：半世紀品味傳承 ✕ 專業 60 題無重複 MBTI 微醺酒館</p>
             </div>
         </div>
     </footer>
@@ -566,73 +558,103 @@
     <script>
         // --- 1. History Timeline ---
         const historyDetails = {
-            '1975': '<b>1975 年（創業起點）：</b>創辦人葉達生先生於大角咀大同新邨創立「新華公司」。當時以搬運與務實打拼精神起家，為九龍及港島傳統士多、辦館、大排檔提供即叫即送的酒水供應服務[cite: 1]。',
-            '1980': '<b>1980 年代（洋酒盛世）：</b>香港經濟起飛，新華率先引入軒尼詩、人頭馬等法國頂級干邑白蘭地，引領節慶送禮、商用宴請與港式餐飲文化的風潮[cite: 1]。',
-            '2008': '<b>2008 年（免稅新章與珠江啤酒）：</b>香港特區政府於 2008 年實行葡萄酒免稅政策，新華公司順應時勢拓展環球名酒與精釀酒款，並引進珠江啤酒等優質產品，將營運據點擴展至火炭[cite: 1]。',
-            '2026': '<b>2026 年（半世紀傳承 ✕ 專業 60 題測驗）：</b>歷經 51 載深厚文化積澱，新華公司結合正規 50 題 MBTI 評估與 10 題酒款偏好測試，提供業界最專業的互動微醺體驗。'
+            '1975': '<b>1975 年（創業起點）：</b>創辦人葉達生先生於大角咀大同新邨創立「新華公司」。當時以搬運與務實打拼精神起家，為九龍及港島傳統士多、辦館、大排檔提供即叫即送的酒水供應服務。',
+            '1980': '<b>1980 年代（洋酒盛世）：</b>香港經濟起飛，新華率先引入軒尼詩、人頭馬等法國頂級干邑白蘭地，引領節慶送禮、商用宴請與港式餐飲文化的風潮。',
+            '2008': '<b>2008 年（免稅新章與珠江啤酒）：</b>香港特區政府於 2008 年實行葡萄酒免稅政策，新華公司順應時勢拓展環球名釀與精釀酒款，並引進珠江啤酒等優質產品，將營運據點擴展至火炭。',
+            '2026': '<b>2026 年（半世紀傳承 ✕ 專業 60 題測驗）：</b>歷經 51 載深厚文化積澱，新華公司結合正規 50 條無重複 MBTI 評估與 10 條酒款偏好測試，提供業界最專業的互動微醺體驗。'
         };
         function showHistoryDetail(key) {
             document.getElementById('historyDetailBox').innerHTML = historyDetails[key] || '';
         }
 
-        // --- 2. Professional 50 MBTI + 10 Wine Questions Engine ---
-        // Generates 50 core MBTI questions dynamically spanning E/I, N/S, T/F, J/P + 10 Wine preference questions.
+        // --- 2. Professional 50 Unique MBTI + 10 Wine Questions Engine ---
         let proQuestions = [];
         let currentProIdx = 0;
         let proScores = { E:0, I:0, N:0, S:0, T:0, F:0, J:0, P:0, wineScore: { beer: 0, cognac: 0, wine: 0, gin: 0 } };
 
-        function buildProQuestions() {
+        function buildUniqueProQuestions() {
             proQuestions = [];
-            // Generate 50 MBTI questions (simulated and categorized systematically)
-            for(let i=1; i<=50; i++) {
-                let dim = (i <= 13) ? 'EI' : (i <= 26) ? 'NS' : (i <= 38) ? 'TF' : 'JP';
-                let qText = getMbtiQuestionText(dim, i);
-                proQuestions.push({ type: 'mbti', dim: dim, q: `(第 ${i}/60 題) ${qText.q}`, options: qText.options });
-            }
-            // Generate 10 Wine Preference questions
-            for(let j=51; j<=60; j++) {
-                let wText = getWineQuestionText(j);
-                proQuestions.push({ type: 'wine', q: `(第 ${j}/60 題 - 微醺偏好) ${wText.q}`, options: wText.options });
-            }
-        }
+            
+            // 50 completely unique MBTI questions covering E/I (1-13), N/S (14-26), T/F (27-38), J/P (39-50)
+            const mbtiTextBank = {
+                EI: [
+                    { q: "在週末的社交派對中，你通常會主動與陌生人破冰攀談嗎？", o1: { t: "會，我喜歡認識新朋友並從中獲得能量 (E)", c: "E" }, o2: { t: "通常不會，我更傾向跟熟識的朋友待在一起 (I)", c: "I" } },
+                    { q: "結束一整天疲憊的工作後，你更渴望哪種充電方式？", o1: { t: "和同事朋友去酒吧暢飲聊天 (E)", c: "E" }, o2: { t: "獨自在家安靜追劇或小酌沈思 (I)", c: "I" } },
+                    { q: "當你在一群人中發表意見時，你的感受是？", o1: { t: "感到興奮與充滿活力 (E)", c: "E" }, o2: { t: "會感到有些消耗體力，希望快點結束 (I)", c: "I" } },
+                    { q: "在電話溝通與文字訊息之間，你平時更傾向？", o1: { t: "直接打電話或語音溝通，效率更高 (E)", c: "E" }, o2: { t: "傳文字訊息，避免即時對話的壓力 (I)", c: "I" } },
+                    { q: "你如何看待週末的行程安排？", o1: { t: "排滿各種聚會與戶外活動，才不浪費時間 (E)", c: "E" }, o2: { t: "保留大塊空白時間留給自己獨處 (I)", c: "I" } },
+                    { q: "面對陌生的聚會場合，你的第一反應通常是？", o1: { t: "迅速融入並成為炒熱氣氛的人 (E)", c: "E" }, o2: { t: "先觀察周遭環境，靜靜等待別人來搭話 (I)", c: "I" } },
+                    { q: "你認為自己的社交電池充電來源主要是？", o1: { t: "外部世界的互動與人際連結 (E)", c: "E" }, o2: { t: "內心世界的獨處與精神反思 (I)", c: "I" } },
+                    { q: "在團隊討論中，你習慣的表達方式是？", o1: { t: "邊說邊思考，透過對話激發靈感 (E)", c: "E" }, o2: { t: "先在腦海中想清楚完整邏輯才開口 (I)", c: "I" } },
+                    { q: "週末逛街時，面對熱鬧擁擠的市集，你的感受是？", o1: { t: "感受到熱鬧的活力與人氣 (E)", c: "E" }, o2: { t: "覺得吵雜疲憊，只想快點離開 (I)", c: "I" } },
+                    { q: "你覺得自己是一個「話匣子打開就停不下來」的人嗎？", o1: { t: "遇到感興趣的話題確實如此 (E)", c: "E" }, o2: { t: "多數時候我是個安靜的傾聽者 (I)", c: "I" } },
+                    { q: "當工作需要進行跨部門協作時，你傾向？", o1: { t: "主動頻繁開會協調進度 (E)", c: "E" }, o2: { t: "盡量用書面郵件或訊息溝通 (I)", c: "I" } },
+                    { q: "你更喜歡哪種居住與辦公環境？", o1: { t: "熱鬧繁華的市中心，隨時能與人接觸 (E)", c: "E" }, o2: { t: "安靜舒適的郊區或獨立辦公室 (I)", c: "I" } },
+                    { q: "度假時，你偏好哪種旅遊模式？", o1: { t: "熱鬧的著名景點、參加當地派對 (E)", c: "E" }, o2: { t: "人煙稀少的自然祕境、深度漫遊 (I)", c: "I" } }
+                ],
+                NS: [
+                    { q: "面對一項新推出的微醺調酒，你優先關注的是？", o1: { t: "它的獨特概念、創意發想與背後故事 (N)", c: "N" }, o2: { t: "它的實際成分、酒精濃度與口感酸甜 (S)", c: "S" } },
+                    { q: "在閱讀書籍或觀看電影時，你更容易被什麼吸引？", o1: { t: "隱含的哲學寓意與象徵手法 (N)", c: "N" }, o2: { t: "精緻的畫面細節與寫實的劇情發展 (S)", c: "S" } },
+                    { q: "你對未來的態度通常是？", o1: { t: "充滿各種想像與可能性，喜歡宏觀規劃 (N)", c: "N" }, o2: { t: "立足當下，踏實做好眼前每一件具體的事 (S)", c: "S" } },
+                    { q: "在學習新事物時，你習慣先了解？", o1: { t: "整體的理論框架與核心原理 (N)", c: "N" }, o2: { t: "具體的步驟操作與實際案例 (S)", c: "S" } },
+                    { q: "當別人向你描述一個計畫時，你傾向注意？", o1: { t: "它宏大的願景與潛在的突破性 (N)", c: "N" }, o2: { t: "執行的細節漏洞與可行性風險 (S)", c: "S" } },
+                    { q: "你如何看待「靈感」這件事？", o1: { t: "靈感來自天馬行空的聯想與直覺衝擊 (N)", c: "N" }, o2: { t: "靈感來自長期累積的實務經驗與觀察 (S)", c: "S" } },
+                    { q: "在日常生活中，你是否常陷入對未來的遐想？", o1: { t: "經常如此，腦中常有各種奇幻劇本 (N)", c: "N" }, o2: { t: "很少，我更關注此時此刻發生的事 (S)", c: "S" } },
+                    { q: "整理房間或辦公桌時，你的風格是？", o1: { t: "隨性擺放，自己知道東西在哪裡即可 (N)", c: "N" }, o2: { t: "分類井然有序，講究實用與整潔 (S)", c: "S" } },
+                    { q: "回憶過去的事情時，你傾向記住？", o1: { t: "當時的整體感受、氛圍與核心意義 (N)", c: "N" }, o2: { t: "具體的日期、對話細節與實際發生的事 (S)", c: "S" } },
+                    { q: "你認為解決問題的最佳途徑是？", o1: { t: "跳脫框架的創新思維與直覺變通 (N)", c: "N" }, o2: { t: "依循被驗證過的最穩妥標準程序 (S)", c: "S" } },
+                    { q: "面對抽象的藝術品或現代詩，你的反應是？", o1: { t: "去解讀作者想表達的深層情感與意境 (N)", c: "N" }, o2: { t: "欣賞它的色彩構圖或直觀感受它是否好看 (S)", c: "S" } },
+                    { q: "在規劃一場聚會時，你更在意？", o1: { t: "整體的主題氣氛與帶給人的驚喜感 (N)", c: "N" }, o2: { t: "食物夠不夠吃、座位舒不舒服、交通方不方便 (S)", c: "S" } },
+                    { q: "你覺得自己是一個具備強烈「第六感」的人嗎？", o1: { t: "是的，我常靠直覺預判事情的走向 (N)", c: "N" }, o2: { t: "還好，我只相信眼睛看到的客觀證據 (S)", c: "S" } }
+                ],
+                TF: [
+                    { q: "當朋友在酒桌上向你抱怨遭遇的不公時，你第一反應是？", o1: { t: "客觀分析局勢，告訴他如何透過規則解決問題 (T)", c: "T" }, o2: { t: "先給予溫暖的安慰與情感支持，站在他那邊 (F)", c: "F" } },
+                    { q: "在職場或團隊中，你認為「效率與原則」和「人情與和諧」哪個更重要？", o1: { t: "原則與效率優先，對事不對人 (T)", c: "T" }, o2: { t: "人情與和諧優先，顧及每個人的感受 (F)", c: "F" } },
+                    { q: "做重大抉擇時，你覺得邏輯分析與個人價值觀哪個佔比更高？", o1: { t: "理性利弊分析 (T)", c: "T" }, o2: { t: "內心的情感歸屬與道德直覺 (F)", c: "F" } },
+                    { q: "當你需要給予他人反饋或批評時，你的風格是？", o1: { t: "直言不諱、切中要害，點出客觀事實 (T)", c: "T" }, o2: { t: "委婉包裝、顧及對方自尊，避免傷害感情 (F)", c: "F" } },
+                    { q: "你認為一個優秀的領導者最核心的特質是？", o1: { t: "頭腦清晰、果斷決策、深謀遠慮 (T)", c: "T" }, o2: { t: "富有同理心、能凝聚人心與激發士氣 (F)", c: "F" } },
+                    { q: "面對激烈的辯論或爭執，你的心態是？", o1: { t: "把道理辯清楚，真理越辯越明，不帶情緒 (T)", c: "T" }, o2: { t: "避免衝突升級，擔心傷害彼此關係 (F)", c: "F" } },
+                    { q: "你在看社會新聞或電影時，更容易被什麼打動？", o1: { t: "縝密的犯罪手法或宏大的體制結構缺陷 (T)", c: "T" }, o2: { t: "主角之間感人至深的情感羈絆與犧牲 (F)", c: "F" } },
+                    { q: "當朋友問你新買的衣服好不好看（實際上不太適合他），你會？", o1: { t: "客觀指出缺點與改善建議 (T)", c: "T" }, o2: { t: "先稱讚他勇於嘗試的勇氣，委婉帶過 (F)", c: "F" } },
+                    { q: "你做決定時是否經常擔心會違反內心的同理原則？", o1: { t: "很少，我只看客觀數據與利益最大化 (T)", c: "T" }, o2: { t: "經常考慮會不會有人因此感到難過 (F)", c: "F" } },
+                    { q: "你認為公平的定義是什麼？", o1: { t: "遵守相同的規則、按能力與貢獻分配 (T)", c: "T" }, o2: { t: "照顧弱勢者的需求、給予關懷與包容 (F)", c: "F" } },
+                    { q: "在評價一項發明或藝術作品時，你更看重？", o1: { t: "它的實用功能、技術突破與成本效益 (T)", c: "T" }, o2: { t: "它帶給人的情感共鳴與心靈觸動 (F)", c: "F" } },
+                    { q: "面對壓力與衝突時，你習慣戴上什麼面具？", o1: { t: "冷靜、理性、不帶私情的面具 (T)", c: "T" }, o2: { t: "溫和、友善、顧全大局的面具 (F)", c: "F" } }
+                ],
+                JP: [
+                    { q: "對於週末的品酒聚會行程，你的習慣是？", o1: { t: "提前查好酒單、訂好餐廳、規劃好交通時間 (J)", c: "J" }, o2: { t: "隨性而至，走到哪喝到哪，享受隨機驚喜 (P)", c: "P" } },
+                    { q: "在工作或日常專案中，你偏好哪種做事節奏？", o1: { t: "提前把進度規劃好，按部就班甚至提早完成 (J)", c: "J" }, o2: { t: "享受壓線衝刺的刺激感，在期限前爆發靈感 (P)", c: "P" } },
+                    { q: "你如何看待生活中突發的計畫變動？", o1: { t: "會感到有些被打亂節奏，需要重新調整計畫 (J)", c: "J" }, o2: { t: "覺得很有趣，順其自然隨機應變即可 (P)", c: "P" } },
+                    { q: "你的書桌或電腦桌面通常保持什麼狀態？", o1: { t: "資料分類明確，檔案井井有條 (J)", c: "J" }, o2: { t: "充滿各種暫存視窗與檔案，但自己找得到 (P)", c: "P" } },
+                    { q: "在購物時，你的決策風格是？", o1: { t: "列好購物清單，比價後理性下手 (J)", c: "J" }, o2: { t: "逛街時看順眼就直接盲買衝動下單 (P)", c: "P" } },
+                    { q: "你覺得生活需要高度的秩序感與規律嗎？", o1: { t: "非常需要，規律能讓我感到安心與掌控感 (J)", c: "J" }, o2: { t: "不需要，過度規律會讓人感到窒息與束縛 (P)", c: "P" } },
+                    { q: "出門旅行時，你的行李箱整理風格是？", o1: { t: "用收納袋分類整齊，衣物按天數配好 (J)", c: "J" }, o2: { t: "出發前一晚隨便塞進包包，夠用就好 (P)", c: "P" } },
+                    { q: "面對未完成的任務，你心中的感受是？", o1: { t: "如鯁在喉，必須趕快把它清空解決 (J)", c: "J" }, o2: { t: "船到橋頭自然直，暫時放著也無所謂 (P)", c: "P" } },
+                    { q: "你認為規則與制度對社會的存在意義是？", o1: { t: "維護社會秩序與效率運作的基石 (J)", c: "J" }, o2: { t: "參考基準，必要時應保有彈性與例外 (P)", c: "P" } },
+                    { q: "在參與一個長期專案時，你習慣？", o1: { t: "嚴格按照里程碑進度表推進 (J)", c: "J" }, o2: { t: "保持高度彈性，隨時準備調整方向 (P)", c: "P" } },
+                    { q: "你喜歡把未來的生活藍圖描繪得清清楚楚嗎？", o1: { t: "喜歡，每個階段要有明確目標 (J)", c: "J" }, o2: { t: "不喜歡，未來充滿變化，走著瞧吧 (P)", c: "P" } },
+                    { q: "與朋友約定時間時，你的習慣是？", o1: { t: "習慣提早 5-10 分鐘到達，不喜歡遲到 (J)", c: "J" }, o2: { t: "準時或壓線到達，偶爾遲到幾分鐘 (P)", c: "P" } }
+                ]
+            };
 
-        function getMbtiQuestionText(dim, idx) {
-            if(dim === 'EI') {
-                return {
-                    q: "在大型社交活動或派對中，你的精力通常是如何變化的？",
-                    options: [
-                        { text: "A. 與眾人交流互動越聊越嗨，社交能讓我快速充飽電 (E)", code: "E" },
-                        { text: "B. 社交一段時間後會感到精神消耗，需要獨處來恢復精力 (I)", code: "I" }
-                    ]
-                };
-            } else if(dim === 'NS') {
-                return {
-                    q: "面對一項全新的工作任務或品酒體驗，你傾向於？",
-                    options: [
-                        { text: "A. 關注其背后的概念、創新可能性與未來發展願景 (N)", code: "N" },
-                        { text: "B. 關注具體的細節、現有的實際數據與過往經驗 (S)", code: "S" }
-                    ]
-                };
-            } else if(dim === 'TF') {
-                return {
-                    q: "在做重大決策時，你認為最不可妥協的核心原則是？",
-                    options: [
-                        { text: "A. 客觀邏輯、效率與公平的規則 (T)", code: "T" },
-                        { text: "B. 他人的感受、團隊和諧與同理心 (F)", code: "F" }
-                    ]
-                };
-            } else {
-                return {
-                    q: "對於日常生活與旅行行程的安排，你的風格是？",
-                    options: [
-                        { text: "A. 喜歡提前做好詳細的計畫與時間表，按部就班 (J)", code: "J" },
-                        { text: "B. 喜歡隨性彈性、走一步算一步，隨時迎接驚喜 (P)", code: "P" }
-                    ]
-                };
+            // Flatten and push exactly 50 unique MBTI questions
+            let qCounter = 1;
+            for (let dimKey in mbtiTextBank) {
+                mbtiTextBank[dimKey].forEach(item => {
+                    proQuestions.push({
+                        type: 'mbti',
+                        dim: dimKey,
+                        q: `(第 ${qCounter}/60 題 - MBTI 心智評估) ${item.q}`,
+                        options: [
+                            { text: item.o1.t, code: item.o1.c },
+                            { text: item.o2.t, code: item.o2.c }
+                        ]
+                    });
+                    qCounter++;
+                });
             }
-        }
 
-        function getWineQuestionText(idx) {
+            // 10 Wine preference questions (51-60)
             const wineBank = [
                 { q: "在炎熱的夏日夜晚，你最想舉杯暢飲的酒款類型是？", options: [ { text: "冰鎮清爽拉格啤酒 (如珠江啤酒)", cat: "beer" }, { text: "優雅清涼的手工琴通寧 (Gin & Tonic)", cat: "gin" } ] },
                 { q: "出席商務晚宴或重要慶功宴時，你首選的敬酒飲品是？", options: [ { text: "法國波爾多精品紅酒", cat: "wine" }, { text: "頂級陳年干邑白蘭地 (Cognac / XO)", cat: "cognac" } ] },
@@ -645,11 +667,21 @@
                 { q: "在選購伴手禮或送禮給重要客戶時，你傾向選擇？", options: [ { text: "經典尊貴的高級干邑白蘭地禮盒", cat: "cognac" }, { text: "備受大眾喜愛與聚會必備的精釀啤酒組合", cat: "beer" } ] },
                 { q: "你心目中最完美的微醺收尾是？", options: [ { text: "與好友大笑乾杯後的滿足感", cat: "beer" }, { text: "獨自手搖酒杯沉澱心靈的成就感", cat: "wine" } ] }
             ];
-            return wineBank[(idx - 51) % wineBank.length];
+
+            wineBank.forEach((w, idx) => {
+                proQuestions.push({
+                    type: 'wine',
+                    q: `(第 ${51 + idx}/60 題 - 微醺酒款偏好) ${w.q}`,
+                    options: [
+                        { text: w.options[0].text, cat: w.options[0].cat },
+                        { text: w.options[1].text, cat: w.options[1].cat }
+                    ]
+                });
+            });
         }
 
         function initProTest() {
-            buildProQuestions();
+            buildUniqueProQuestions();
             currentProIdx = 0;
             proScores = { E:0, I:0, N:0, S:0, T:0, F:0, J:0, P:0, wineScore: { beer: 0, cognac: 0, wine: 0, gin: 0 } };
             document.getElementById('proResultReport').classList.add('hidden');
@@ -665,20 +697,20 @@
             document.getElementById('progressBarFill').style.width = percent + '%';
             document.getElementById('progressPercent').innerText = percent + '%';
             document.getElementById('progressStageTitle').innerText = currentProIdx < 50 
-                ? `階段一：正規 MBTI 心智評估 (${currentProIdx + 1} / 50)` 
+                ? `階段一：正規 MBTI 核心心智評估 (${currentProIdx + 1} / 50)` 
                 : `階段二：微醺與酒款偏好測試 (${currentProIdx - 49} / 10)`;
 
             box.innerHTML = `
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
                         <span class="px-2.5 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded">
-                            ${currentProIdx < 50 ? 'MBTI 維度評估' : '微醺酒款偏好'}
+                            ${currentProIdx < 50 ? '無重複 MBTI 維度評估' : '微醺酒款偏好調查'}
                         </span>
                         <span class="text-xs text-stone-500 font-medium">第 ${currentProIdx + 1} / 60 題</span>
                     </div>
                     <h3 class="text-base sm:text-lg font-bold text-stone-800 leading-snug">${qObj.q}</h3>
                     <div class="space-y-2 pt-2">
-                        ${qObj.options.map((opt, i) => `
+                        ${qObj.options.map((opt) => `
                             <button onclick="handleProAnswer('${qObj.type}', '${opt.code || opt.cat}')" class="w-full text-left p-3.5 rounded-xl border border-stone-300 hover:bg-amber-100/70 hover:border-amber-600 transition text-xs sm:text-sm font-medium text-stone-700 bg-white shadow-sm flex items-center justify-between">
                                 <span>${opt.text}</span>
                                 <span class="text-xs text-amber-700 font-bold">選擇 ➔</span>
@@ -734,7 +766,7 @@
 
             document.getElementById('repTitle').innerText = `${finalCode} ${profile.name} ✕ 新華品味認證`;
             document.getElementById('repPersonality').innerText = profile.desc;
-            document.getElementById('repWine').innerText = `命定推薦：${profile.drink}。根據您前 50 題心智傾向與後 10 題微醺偏好交叉比對，此酒款完美契合您的口感期待。`;
+            document.getElementById('repWine').innerText = `命定推薦：${profile.drink}。根據您前 50 條無重複心智評估與後 10 條酒款偏好交叉比對，此酒款完美契合您的口感期待。`;
             document.getElementById('repOccasion').innerText = profile.occasion;
             document.getElementById('repFood').innerText = profile.food;
 
@@ -918,7 +950,7 @@
             hk4: "<strong>🇭🇰 香港傳統：皮蛋瘦肉生滾粥 (Congee)</strong><br/>次日清晨來一碗溫熱綿密的港式生滾粥，保護胃壁黏膜，生薑與皮蛋補充蛋白質與鹽分，溫和護胃。",
             jp: "<strong>🇯🇵 日本：</strong>熱味噌湯補充流失的水份與鹽分，搭配富含檸檬酸的醃漬梅子 (Umeboshi)，促進肝臟代謝。",
             kr: "<strong>🇰🇷 韓國：</strong>吃一碗熱騰騰的『解酒湯 (Haejang-guk)』，裡面有牛骨湯底與豆芽，幫助發汗醒酒。",
-            uk: "<strong>🇬🇧 英國：</strong>經典的全英式早餐（培根、煎蛋、吐司），用高蛋白質與油脂迅速補充血糖。"
+            uk: "<strong>🇬🇧 英國：</strong>經典的全英式早餐（培根, 煎蛋, 吐司），用高蛋白質與油脂迅速補充血糖。"
         };
         function updateHangoverCure() {
             const val = document.getElementById('hangoverSelect').value;

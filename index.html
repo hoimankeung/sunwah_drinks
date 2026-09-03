@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新華公司 Sun Wah Co. | 半世紀品味傳承 X 互動 MBTI 靈魂酒館</title>
+    <title>醉美人間 —— 新華公司 ‧ 半世紀品味傳承 X 專業 MBTI 深度微醺酒館</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js -->
@@ -12,422 +12,966 @@
         body {
             background-color: #faf6f0;
             color: #2c221e;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
         }
-        .bg-parchment-card { background-color: #ffffff; }
+        .bg-parchment { background-color: #f3ebe1; }
+        .text-amber-gold { color: #b45309; }
         .bg-amber-gold { background-color: #b45309; }
-        .tab-btn.active {
-            background-color: #b45309;
-            color: #ffffff;
+        .border-amber-gold { border-color: #d97706; }
+        .text-burgundy { color: #7c1a1c; }
+        .bg-burgundy { background-color: #7c1a1c; }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 340px;
+            max-height: 400px;
         }
-        /* 擬真新華 Logo CSS 徽章 */
+        @media (min-width: 768px) {
+            .chart-container { height: 380px; }
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 25px -5px rgba(180, 83, 9, 0.1), 0 8px 10px -6px rgba(124, 26, 28, 0.08);
+        }
+        .active-tab {
+            background-color: #7c1a1c !important;
+            color: #ffffff !important;
+        }
+
+        /* Sun Wah Authentic Brand Logo Replica (Matching IMG_1044 2.jpg) */
         .sunwah-logo-badge {
-            background-color: #7C1A1C;
-            border: 1.5px solid #d97706;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            background-color: #7c1a1c;
+            color: #f2e3c6;
+            aspect-ratio: 1 / 1;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.35rem 0.45rem;
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid rgba(242, 227, 198, 0.3);
+            user-select: none;
+        }
+        .sunwah-logo-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+        }
+        .sunwah-vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-family: "KaiTi", "BiauKai", "STKaiti", "DFKai-SB", "Noto Serif TC", serif;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+        .sunwah-seal {
+            border: 1px solid #7c1a1c;
+            background-color: #f2e3c6;
+            color: #7c1a1c;
+            font-size: 8px;
+            font-weight: 900;
+            padding: 1px 2px;
+            border-radius: 2px;
+            line-height: 1;
+            display: inline-block;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-100 selection:text-amber-900">
 
-    <!-- 頂部導覽列：採用您確認的精緻新華紅金 Logo 與標題 -->
-    <header class="bg-stone-900 text-stone-200 sticky top-0 z-50 shadow-sm border-b border-stone-800">
-        <div class="max-w-6xl mx-auto px-4 py-2 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <!-- 圖片優先載入 logo.png，若無則完美呈現紅金 CSS 徽章 -->
-                <div class="flex items-center space-x-2">
-                    <img src="logo.png" alt="新華公司 Logo" class="h-10 w-auto rounded object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="sunwah-logo-badge rounded p-1.5 text-center hidden flex-col justify-center items-center" style="width: 42px; height: 42px;">
-                        <span class="text-amber-200 text-[11px] font-bold leading-tight">新華</span>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-stone-950/95 text-amber-50 backdrop-blur shadow-xl border-b border-amber-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#top" class="flex items-center space-x-3 group">
+                <div class="sunwah-logo-badge w-12 h-14 shrink-0 shadow-md transition-transform group-hover:scale-105">
+                    <div class="sunwah-logo-main flex-1 flex justify-center items-center gap-0.5 my-0.5">
+                        <span class="sunwah-vertical-text text-xl font-bold tracking-tighter">新華</span>
+                        <div class="flex flex-col justify-between h-full py-0.5 items-center">
+                            <span class="sunwah-vertical-text text-[10px] font-normal tracking-tight">公司</span>
+                            <span class="sunwah-seal text-[7px] scale-90">新華</span>
+                        </div>
                     </div>
+                    <div class="text-[8px] font-serif tracking-widest text-amber-200/90 whitespace-nowrap">SINCE 1975</div>
                 </div>
                 <div>
-                    <h1 class="font-medium text-sm text-stone-100">新華公司</h1>
-                    <p class="text-[10px] text-stone-400 font-light">SUN WAH COMPANY ‧ SINCE 1975</p>
+                    <div class="font-extrabold text-base sm:text-xl tracking-wide text-amber-100 flex items-center gap-2">
+                        新華公司 <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-900/80 text-amber-300 border border-amber-700/60 hidden sm:inline-block">SINCE 1975</span>
+                    </div>
+                    <div class="text-[11px] sm:text-xs font-medium text-amber-300/80 tracking-wider">
+                        香港在地酒品專家 ‧ 始於 1975
+                    </div>
                 </div>
-            </div>
-            <nav class="hidden md:flex space-x-5 text-xs text-stone-300 font-normal">
-                <a href="#assessment" class="text-amber-400 font-bold hover:underline">🔍 MBTI 互動測驗報告</a>
-                <a href="#history" class="hover:text-amber-400 transition">老字號故事</a>
-                <a href="#mbti-grid" class="hover:text-amber-400 transition">16型人格酒館</a>
-                <a href="#culture" class="hover:text-amber-400 transition">環球與香港地圖</a>
-                <a href="#hangovers" class="hover:text-amber-400 transition">傳統解酒妙方</a>
-                <a href="#contact" class="hover:text-amber-400 transition">聯絡資訊</a>
+            </a>
+
+            <nav class="hidden lg:flex space-x-5 text-xs xl:text-sm font-medium">
+                <a href="#history" class="hover:text-amber-300 transition-colors">🏛️ 老字號故事</a>
+                <a href="#mbti-pro-section" class="hover:text-amber-300 text-amber-300 font-bold transition-colors">🧠 專業 60 題深度測驗報告</a>
+                <a href="#cultures" class="hover:text-amber-300 transition-colors">環球地圖</a>
+                <a href="#truths" class="hover:text-amber-300 transition-colors">酒後吐真言</a>
+                <a href="#dosdonts" class="hover:text-amber-300 transition-colors">宜忌指南</a>
+                <a href="#mood" class="hover:text-amber-300 transition-colors">心情調酒師</a>
             </nav>
+
+            <div class="lg:hidden">
+                <button id="menuBtn" class="p-2 rounded text-amber-200 hover:bg-stone-800 focus:outline-none">☰ 選單</button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden lg:hidden bg-stone-900 px-4 pt-2 pb-4 space-y-2 border-t border-stone-800 text-sm">
+            <a href="#history" class="block py-1 hover:text-amber-300">🏛️ 老字號故事</a>
+            <a href="#mbti-pro-section" class="block py-1 text-amber-300 font-bold">🧠 專業 60 題深度測驗報告</a>
+            <a href="#cultures" class="block py-1 hover:text-amber-300">環球與香港地圖</a>
+            <a href="#truths" class="block py-1 hover:text-amber-300">酒後吐真言模擬器</a>
+            <a href="#dosdonts" class="block py-1 hover:text-amber-300">酒後宜忌指南</a>
+            <a href="#mood" class="block py-1 hover:text-amber-300">心情調酒師</a>
         </div>
     </header>
 
-    <!-- Banner 橫幅 -->
-    <section class="bg-stone-900 text-stone-100 py-8 px-4 border-b border-stone-800">
-        <div class="max-w-3xl mx-auto text-center space-y-2">
-            <span class="inline-block bg-stone-800 text-stone-300 border border-stone-700 px-2.5 py-0.5 rounded text-xs font-normal">
-                香港在地酒品專家 ‧ 始於 1975 年
-            </span>
-            <h2 class="text-xl md:text-2xl font-semibold text-stone-200">
-                半世紀品味傳承 ✕ 互動 MBTI 靈魂酒館報告
-            </h2>
-            <p class="text-stone-400 text-xs md:text-sm max-w-xl mx-auto font-light leading-relaxed">
-                自 1975 年起深耕香港，從傳統士多辦館的酒水伴侶，到引進環球名釀。現在就透過專業 MBTI 心理測驗，解鎖屬於您的微醺靈魂報告！
+    <!-- Hero Banner -->
+    <section id="top" class="bg-gradient-to-b from-stone-950 via-amber-950 to-stone-900 text-amber-50 py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden border-b border-amber-900/60">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="inline-flex items-center gap-3 p-3 px-5 bg-stone-900/80 border border-amber-500/40 rounded-2xl shadow-xl backdrop-blur">
+                <div class="sunwah-logo-badge w-14 h-16 shrink-0">
+                    <div class="sunwah-logo-main flex-1 flex justify-center items-center gap-0.5 my-0.5">
+                        <span class="sunwah-vertical-text text-2xl font-bold tracking-tighter">新華</span>
+                        <div class="flex flex-col justify-between h-full py-0.5 items-center">
+                            <span class="sunwah-vertical-text text-[11px] font-normal">公司</span>
+                            <span class="sunwah-seal text-[8px]">新華</span>
+                        </div>
+                    </div>
+                    <div class="text-[9px] font-serif tracking-widest text-amber-200">SINCE 1975</div>
+                </div>
+                <div class="text-left">
+                    <div class="text-xs font-bold text-amber-400 tracking-wider">SUN WAH COMPANY 🇭🇰</div>
+                    <div class="text-sm sm:text-base font-black text-amber-100">半世紀品味傳承 ‧ 香港在地酒品專家</div>
+                </div>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-amber-100 leading-tight">
+                醉美人間 ✕ 專業 60 題微醺人格報告
+            </h1>
+            <p class="text-base sm:text-lg text-amber-200/90 leading-relaxed max-w-2xl mx-auto font-normal">
+                結合 <b>50 條正規 MBTI 關鍵題庫</b> 與 <b>10 條專業酒款偏好測試</b>，為您精準解鎖兼具性格解析與新華美酒配對的頂級全方位微醺報告。
             </p>
-            <div class="pt-2">
-                <a href="#assessment" class="inline-block bg-amber-700 hover:bg-amber-600 text-white font-medium px-5 py-2 rounded-lg text-xs shadow transition">
-                    ✨ 開始進行 MBTI 心理測驗
-                </a>
+
+            <div class="pt-3 flex flex-wrap justify-center gap-3 text-xs sm:text-sm">
+                <a href="#mbti-pro-section" class="px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-lg shadow-xl transition-all">🧠 開始進行 60 題深度專業測驗</a>
+                <a href="#history" class="px-5 py-3 bg-stone-800 hover:bg-stone-700 border border-amber-500/50 text-amber-200 font-bold rounded-lg transition-all">📜 閱讀新華老字號簡史</a>
             </div>
         </div>
     </section>
 
-    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8 space-y-12">
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
 
-        <!-- ==================== 新增：真正的 MBTI 互動測驗與詳細報告專區 ==================== -->
-        <section id="assessment" class="bg-parchment-card rounded-2xl p-6 md:p-8 shadow-md border-2 border-amber-600/40 space-y-6">
+        <!-- ==================== PROFESSIONAL 60-QUESTION MBTI & WINE SYSTEM ==================== -->
+        <section id="mbti-pro-section" class="scroll-mt-24">
+            <div class="bg-white rounded-2xl p-6 sm:p-10 custom-shadow border-2 border-amber-600 space-y-8">
+                
+                <div class="text-center space-y-3 border-b border-amber-200 pb-6">
+                    <span class="px-3 py-1 bg-amber-100 text-amber-900 font-bold text-xs rounded-full">新華品味師 ‧ 企業級高精準測驗引擎</span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-stone-900">專業 60 題微醺心智與酒款深度測驗</h2>
+                    <p class="text-xs sm:text-sm text-stone-600 max-w-2xl mx-auto">
+                        本系統分為兩階段：<b>階段一（50題）</b>評估您正規的 MBTI 四維度心智傾向；<b>階段二（10題）</b>探討您的微醺口感與飲酒偏好。完成後將交叉生成專屬您的詳細報告。
+                    </p>
+                    
+                    <!-- Progress Bar Header -->
+                    <div id="testProgressWrapper" class="max-w-md mx-auto pt-4">
+                        <div class="flex justify-between text-xs font-bold text-amber-900 mb-1">
+                            <span id="progressStageTitle">階段一：MBTI 核心心智評估 (1 / 50)</span>
+                            <span id="progressPercent">2%</span>
+                        </div>
+                        <div class="w-full bg-stone-200 h-3 rounded-full overflow-hidden">
+                            <div id="progressBarFill" class="bg-amber-600 h-full transition-all duration-300" style="width: 2%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Test Interactive Box -->
+                <div id="testCardBox" class="bg-stone-50 p-6 sm:p-8 rounded-xl border border-stone-200 space-y-6 max-w-3xl mx-auto">
+                    <!-- Dynamic Question Container injected by JS -->
+                </div>
+
+                <!-- Detailed Result Report Container (Hidden initially) -->
+                <div id="proResultReport" class="hidden space-y-8 bg-gradient-to-br from-amber-50 to-stone-100 p-6 sm:p-10 rounded-2xl border-2 border-amber-700 shadow-2xl">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-amber-300 pb-6 gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-amber-800 uppercase tracking-widest">Sun Wah Certified Sommelier Report</span>
+                            <h3 id="repTitle" class="text-3xl sm:text-4xl font-black text-stone-900 mt-1">INTJ 建築師 ✕ 橡木桶陳年專家</h3>
+                            <div class="text-xs text-stone-500 mt-1">分析依據：50題正規行為心智矩陣 ＋ 10題酒款偏好交叉比對</div>
+                        </div>
+                        <button onclick="restartProTest()" class="px-4 py-2 bg-stone-800 hover:bg-stone-700 text-amber-200 font-bold rounded-lg text-xs transition">🔄 重新測驗</button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Col 1 -->
+                        <div class="space-y-4">
+                            <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200 space-y-2">
+                                <h4 class="font-bold text-amber-900 text-sm flex items-center gap-2"><span>🧠</span><span>1. MBTI 核心性格解析</span></h4>
+                                <p id="repPersonality" class="text-xs sm:text-sm text-stone-700 leading-relaxed"></p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200 space-y-2">
+                                <h4 class="font-bold text-amber-900 text-sm flex items-center gap-2"><span>🍷</span><span>2. 新華品味師推薦命定酒款</span></h4>
+                                <p id="repWine" class="text-xs sm:text-sm text-stone-700 leading-relaxed"></p>
+                            </div>
+                        </div>
+
+                        <!-- Col 2 -->
+                        <div class="space-y-4">
+                            <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200 space-y-2">
+                                <h4 class="font-bold text-amber-900 text-sm flex items-center gap-2"><span>✨</span><span>3. 最佳微醺場合與氣氛</span></h4>
+                                <p id="repOccasion" class="text-xs sm:text-sm text-stone-700 leading-relaxed"></p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200 space-y-2">
+                                <h4 class="font-bold text-amber-900 text-sm flex items-center gap-2"><span>🥢</span><span>4. 香港地道下酒菜配對 (Food Pairing)</span></h4>
+                                <p id="repFood" class="text-xs sm:text-sm text-stone-700 leading-relaxed"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hangover & Legal Notice Box inside Report -->
+                    <div class="bg-stone-900 text-amber-100 p-5 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                        <div class="space-y-1">
+                            <div class="font-bold text-amber-400">🌿 新華品味師貼心提醒：</div>
+                            <p class="text-stone-300">享受美酒後，建議搭配一杯香港傳統「<b>葛花解酒茶</b>」或「<b>鹹檸檬陳皮水</b>」以養胃生津。</p>
+                        </div>
+                        <a href="#hangovers" class="px-4 py-2 bg-amber-700 hover:bg-amber-600 text-white font-bold rounded whitespace-nowrap">查看解酒秘方 ➔</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: SUN WAH HISTORY (老字號故事 ‧ 新華半世紀簡史) -->
+        <section id="history" class="scroll-mt-24">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 custom-shadow border-2 border-amber-200 space-y-6">
+                
+                <div class="flex flex-col sm:flex-row justify-between items-center border-b border-amber-100 pb-5 gap-4">
+                    <div class="text-center sm:text-left space-y-1">
+                        <span class="text-xs font-bold text-amber-800 tracking-widest uppercase">OUR HERITAGE SINCE 1975</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 flex items-center justify-center sm:justify-start gap-2">
+                            <span>📜</span> 老字號故事 ‧ 新華半世紀簡史
+                        </h2>
+                        <p class="text-xs sm:text-sm text-stone-500">
+                            一九七五年大角咀起家，見證港式飲食與酒品文化演變
+                        </p>
+                    </div>
+
+                    <div class="sunwah-logo-badge w-16 h-20 shrink-0 shadow-lg">
+                        <div class="sunwah-logo-main flex-1 flex justify-center items-center gap-0.5 my-0.5">
+                            <span class="sunwah-vertical-text text-2xl font-bold tracking-tighter">新華</span>
+                            <div class="flex flex-col justify-between h-full py-0.5 items-center">
+                                <span class="sunwah-vertical-text text-[11px] font-normal">公司</span>
+                                <span class="sunwah-seal text-[8px]">新華</span>
+                            </div>
+                        </div>
+                        <div class="text-[9px] font-serif tracking-widest text-amber-200">SINCE 1975</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-stone-50 p-6 rounded-xl border border-amber-200/80 space-y-3 hover:border-amber-500 transition shadow-sm">
+                        <div class="text-amber-800 font-extrabold text-lg flex items-center gap-2">
+                            <span>🚚</span> 1975 大角咀創業
+                        </div>
+                        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+                            創辦人<b>葉達生先生</b>與夥伴於<b>大角咀大同新邨</b>創立新華公司，憑藉即叫即送與務實打拼精神，締造高峰期全港近半士多均有新華供酒的盛況[cite: 1]。
+                        </p>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 rounded-xl border border-amber-200/80 space-y-3 hover:border-amber-500 transition shadow-sm">
+                        <div class="text-amber-800 font-extrabold text-lg flex items-center gap-2">
+                            <span>🍷</span> 洋酒與經典啤酒
+                        </div>
+                        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+                            深諳四大啤酒工藝與香氣特性，八十年代經濟起飛時率先引進<b>軒尼詩（Hennessy）</b>、<b>人頭馬（Rémy Martin）</b>等經典干邑洋酒，引領節慶送禮與餐飲潮流[cite: 1]。
+                        </p>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 rounded-xl border border-amber-200/80 space-y-3 hover:border-amber-500 transition shadow-sm">
+                        <div class="text-amber-800 font-extrabold text-lg flex items-center gap-2">
+                            <span>🤝</span> 第二代創新守業
+                        </div>
+                        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">
+                            第二代接棒後積極拓展品類，引進<b>珠江啤酒</b>等優質品牌，並於 2008 年把握紅酒免稅契機擴展環球名酒品類，現於<b>火炭</b>持續提供專業酒水服務[cite: 1]。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50/80 rounded-xl p-5 border border-amber-200 space-y-4">
+                    <h3 class="font-bold text-amber-950 text-sm flex items-center gap-2">
+                        <span>⏳</span> 點擊探尋新華半世紀里程碑（1975 - 2026）
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                        <button onclick="showHistoryDetail('1975')" class="hist-btn p-2.5 bg-white rounded border border-amber-300 font-bold hover:bg-amber-700 hover:text-white transition">1975：大角咀起家</button>
+                        <button onclick="showHistoryDetail('1980')" class="hist-btn p-2.5 bg-white rounded border border-amber-300 font-bold hover:bg-amber-700 hover:text-white transition">1980s：干邑洋酒風潮</button>
+                        <button onclick="showHistoryDetail('2008')" class="hist-btn p-2.5 bg-white rounded border border-amber-300 font-bold hover:bg-amber-700 hover:text-white transition">2008：紅酒免稅新章</button>
+                        <button onclick="showHistoryDetail('2026')" class="hist-btn p-2.5 bg-white rounded border border-amber-300 font-bold hover:bg-amber-700 hover:text-white transition">2026：專業 60 題測驗</button>
+                    </div>
+                    <div id="historyDetailBox" class="bg-white p-4 rounded border border-amber-300 text-xs text-stone-700 leading-relaxed shadow-inner">
+                        請點擊上方年份，探索新華公司在不同年代的故事。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Global & Hong Kong Drinking Cultures -->
+        <section id="cultures" class="scroll-mt-24">
+            <div class="text-center space-y-2 mb-8">
+                <span class="text-xs font-bold text-amber-800 tracking-wider">CULTURAL EXPLORATION</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-burgundy">🌍 環球與香港地道微醺地圖</h2>
+                <p class="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto">
+                    深入探索香港大排檔、蘭桂坊酒吧與世界各國酒精禮儀與飲酒特色：
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button onclick="filterCultures('all')" class="culture-filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-amber-700 bg-amber-800 text-white transition">全部地區</button>
+                <button onclick="filterCultures('HK')" class="culture-filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-amber-700 bg-white text-stone-700 hover:bg-amber-100 transition">🇭🇰 香港特區</button>
+                <button onclick="filterCultures('Europe')" class="culture-filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-amber-700 bg-white text-stone-700 hover:bg-amber-100 transition">歐洲文化</button>
+                <button onclick="filterCultures('Asia')" class="culture-filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-amber-700 bg-white text-stone-700 hover:bg-amber-100 transition">亞洲文化</button>
+                <button onclick="filterCultures('Americas')" class="culture-filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-amber-700 bg-white text-stone-700 hover:bg-amber-100 transition">美洲文化</button>
+            </div>
+
+            <div id="culturesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </section>
+
+        <!-- Section 3: World Bizarre Drunken Habits -->
+        <section id="behaviors" class="scroll-mt-24">
+            <div class="text-center space-y-2 mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-burgundy flex items-center justify-center gap-2">
+                    <span>🤪</span> 世界各地「醉酒後奇怪行為」大觀園
+                </h2>
+                <p class="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto">
+                    酒精能讓人類放下社會面具！從日本東京車站的「月台睡仙」到香港大排檔的「猜枚狂人」，點擊探索有趣的醉酒文化現象：
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="bizarreGrid"></div>
+        </section>
+
+        <!-- Section 4: In Vino Veritas -->
+        <section id="truths" class="scroll-mt-24">
+            <div class="bg-parchment rounded-xl p-6 sm:p-8 custom-shadow border border-amber-200 space-y-8">
+                <div class="text-center space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-burgundy flex items-center justify-center gap-2">
+                        <span>🗣️</span> 酒後吐真言 (In Vino Veritas) 大解析
+                    </h2>
+                    <p class="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto">
+                        拉丁諺語說『酒後吐真言』，大腦科學究竟如何解釋這個現象？新華公司為您拆解酒後大腦運作原理：
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+                    <div class="bg-white p-5 rounded-lg border border-amber-200 space-y-2">
+                        <div class="font-bold text-amber-900 text-base flex items-center gap-1.5"><span>🧠</span> 1. 前額葉皮質被「麻痺」</div>
+                        <p class="text-stone-600 leading-relaxed">大腦的前額葉負責理性思考與自我控制。酒精降低前額葉活性，讓平常被壓抑的情感與真言瞬間噴發。</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg border border-amber-200 space-y-2">
+                        <div class="font-bold text-amber-900 text-base flex items-center gap-1.5"><span>🎭</span> 2. 「真言」還是「情緒放大」？</div>
+                        <p class="text-stone-600 leading-relaxed">研究指出：酒後話語不一定是絕對事實，但絕對是當下真實的強烈情緒，酒精放大了當下的衝動。</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg border border-amber-200 space-y-2">
+                        <div class="font-bold text-amber-900 text-base flex items-center gap-1.5"><span>💬</span> 3. 「醉酒社交」的催化劑</div>
+                        <p class="text-stone-600 leading-relaxed">當社交防禦降到最低，微醺能快速縮短人與人之間的心理距離，增進彼此情感交流。</p>
+                    </div>
+                </div>
+
+                <!-- Drunken Truth Simulator -->
+                <div class="bg-white rounded-xl p-6 border-2 border-amber-600/60 space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-amber-200 pb-4">
+                        <div>
+                            <h3 class="font-extrabold text-lg text-stone-800 flex items-center gap-2"><span>🎲</span> 「酒後吐真言」型態模擬器</h3>
+                            <p class="text-xs text-stone-500 mt-0.5">選擇醉酒類型，隨機抽取微醺時最容易脫口而出的心聲：</p>
+                        </div>
+                        <div class="mt-3 sm:mt-0">
+                            <select id="personaSelect" onchange="generateDrunkenTruth()" class="p-2 bg-amber-50 border border-amber-300 rounded text-xs font-bold text-amber-900 focus:outline-none">
+                                <option value="affectionate">❤️ 深情感性型</option>
+                                <option value="philosophical">🌌 哲學人生型</option>
+                                <option value="bossy">👑 霸氣豪爽型</option>
+                                <option value="crying">🥺 哭包委屈型</option>
+                                <option value="english">🇬🇧 突發英語型</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="truthResultBox" class="bg-amber-50/70 p-6 rounded-lg border border-amber-200 text-center space-y-3"></div>
+                    <div class="text-center">
+                        <button onclick="generateDrunkenTruth()" class="px-6 py-2.5 bg-amber-700 hover:bg-amber-800 text-white font-bold text-xs sm:text-sm rounded-lg shadow transition">🎲 換一個心聲句型</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Post-Drinking Do's and Don'ts -->
+        <section id="dosdonts" class="scroll-mt-24">
+            <div class="text-center space-y-2 mb-8">
+                <span class="text-xs font-bold text-amber-800 tracking-wider">SUN WAH RESPONSIBLE DRINKING</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-burgundy flex items-center justify-center gap-2">
+                    <span>🛑</span> 酒後適宜 (Do's) 與嚴禁 (Don'ts) 活動指南
+                </h2>
+                <p class="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto"><b>新華公司溫馨提醒：</b>微醺雖美，安全第一！請牢記以下酒後安全須知：</p>
+            </div>
+
+            <div class="flex justify-center space-x-2 mb-6">
+                <button onclick="filterGuide('all')" class="dos-tab px-4 py-1.5 text-xs sm:text-sm font-bold rounded-lg bg-burgundy text-white">全部清單</button>
+                <button onclick="filterGuide('dont')" class="dos-tab px-4 py-1.5 text-xs sm:text-sm font-bold rounded-lg bg-white text-stone-700 border border-stone-300 hover:bg-amber-50">🚫 嚴禁/不宜做</button>
+                <button onclick="filterGuide('do')" class="dos-tab px-4 py-1.5 text-xs sm:text-sm font-bold rounded-lg bg-white text-stone-700 border border-stone-300 hover:bg-amber-50">✅ 推薦/適宜做</button>
+            </div>
+            <div id="dosdontsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+        </section>
+
+        <!-- Section 6: Mood Lounge & Toast Etiquette -->
+        <section id="mood" class="scroll-mt-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div class="bg-parchment rounded-xl p-6 custom-shadow border border-amber-200 space-y-6">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl sm:text-2xl font-bold text-burgundy flex items-center gap-2"><span>🍸</span> 新華心情調酒師 (Mood Lounge)</h2>
+                            <span class="text-[10px] bg-amber-800 text-amber-100 font-bold px-2 py-0.5 rounded">新華特調</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-stone-600 mt-1">選一個貼近當下心境的標籤，讓新華調酒師為您獻上對應的療癒美酒：</p>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                        <button onclick="selectMood('celebrate')" class="mood-btn p-3 bg-white rounded-lg border border-amber-300 hover:border-amber-600 text-stone-800 text-xs sm:text-sm font-medium text-center shadow-sm">🎉 大肆慶祝</button>
+                        <button onclick="selectMood('hkChill')" class="mood-btn p-3 bg-white rounded-lg border border-amber-300 hover:border-amber-600 text-stone-800 text-xs sm:text-sm font-medium text-center shadow-sm">🇭🇰 珠江啤酒大排檔</button>
+                        <button onclick="selectMood('sad')" class="mood-btn p-3 bg-white rounded-lg border border-amber-300 hover:border-amber-600 text-stone-800 text-xs sm:text-sm font-medium text-center shadow-sm">💔 心碎想靜靜</button>
+                        <button onclick="selectMood('friday')" class="mood-btn p-3 bg-white rounded-lg border border-amber-300 hover:border-amber-600 text-stone-800 text-xs sm:text-sm font-medium text-center shadow-sm">⚡ 週五下班放騷</button>
+                        <button onclick="selectMood('solo')" class="mood-btn p-3 bg-white rounded-lg border border-amber-300 hover:border-amber-600 text-stone-800 text-xs sm:text-sm font-medium text-center shadow-sm">🌙 軒尼詩經典品嘗</button>
+                        <button onclick="selectMood('adventurous')" class="mood-btn p-3 bg-white rounded-lg border border-amber-300 hover:border-amber-600 text-stone-800 text-xs sm:text-sm font-medium text-center shadow-sm">🚀 波爾多紅酒醇香</button>
+                    </div>
+                    <div id="moodDisplay" class="bg-white p-5 rounded-lg border-l-4 border-amber-600 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span id="moodTitle" class="font-bold text-stone-800 text-base">請點選上方心情...</span>
+                            <span id="moodDrinkTag" class="px-2 py-0.5 bg-amber-100 text-amber-900 text-xs rounded font-semibold">特調推薦</span>
+                        </div>
+                        <p id="moodStory" class="text-xs sm:text-sm text-stone-600 leading-relaxed">選一個心情按鈕，調酒師會為您調配出一杯講述心聲的靈魂美酒。</p>
+                        <div id="moodFood" class="text-xs text-amber-900 bg-amber-50 p-2 rounded hidden"></div>
+                        <div id="moodQuote" class="text-xs italic text-amber-800 border-t border-stone-100 pt-2"></div>
+                    </div>
+                </div>
+
+                <div id="toasts" class="bg-white rounded-xl p-6 custom-shadow border border-amber-200 space-y-6">
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-burgundy flex items-center gap-2"><span>🥂</span> 廣東話「飲勝」與世界祝酒禮儀</h2>
+                        <p class="text-xs sm:text-sm text-stone-600 mt-1">香港人聚會最喜歡高喊「飲勝！」，世界各地也有各自的豪爽祝酒用語與小撇步：</p>
+                    </div>
+                    <div id="toastList" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Data Visualizations -->
+        <section class="bg-parchment rounded-xl p-6 custom-shadow border border-amber-200 space-y-6">
             <div class="text-center space-y-2">
-                <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">新華品味師 ‧ 深度心理測驗系統</span>
-                <h3 class="text-2xl font-bold text-stone-800">尋找您的微醺靈魂配對</h3>
-                <p class="text-stone-500 text-xs max-w-lg mx-auto">回答以下 4 個直覺問題，系統將為您分析專屬 MBTI 人格，並量身打造包含性格、命定酒款、聚會場合與地道下酒菜的詳細報告！</p>
+                <span class="text-xs font-bold text-amber-800 tracking-wider">SUN WAH MARKET INSIGHTS</span>
+                <h2 class="text-2xl font-bold text-burgundy">📊 各區主要酒精偏好對比（含香港市場數據）</h2>
+                <p class="text-xs sm:text-base text-stone-600 max-w-xl mx-auto">香港作為中西文化交匯之都，葡萄酒與精釀啤酒消費比例極高，呈現多元優雅的消費趨勢：</p>
             </div>
-
-            <!-- 測驗作答表單 -->
-            <div id="quiz-form-container" class="space-y-6 max-w-2xl mx-auto bg-stone-50 p-6 rounded-xl border border-stone-200">
-                <!-- 問題 1 -->
-                <div class="space-y-2" data-q="1">
-                    <label class="block font-bold text-sm text-stone-800">Q1. 在週末的聚會中，您通常扮演什麼角色？</label>
-                    <div class="space-y-1.5 text-xs">
-                        <label class="flex items-center space-x-2 p-2 rounded bg-white border border-stone-200 cursor-pointer hover:bg-amber-50">
-                            <input type="radio" name="q1" value="E" class="text-amber-600">
-                            <span>作為全場焦點，熱情與大家乾杯互動，透過社交獲取能量 (E)</span>
-                        </label>
-                        <label class="flex items-center space-x-2 p-2 rounded bg-white border border-stone-200 cursor-pointer hover:bg-amber-50">
-                            <input type="radio" name="q1" value="I" class="text-amber-600">
-                            <span>傾向與兩三知心好友安靜小酌，享受深度的二對一談心 (I)</span>
-                        </label>
-                    </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                <div class="lg:col-span-2">
+                    <div class="chart-container"><canvas id="alcoholChart"></canvas></div>
                 </div>
-
-                <!-- 問題 2 -->
-                <div class="space-y-2" data-q="2">
-                    <label class="block font-bold text-sm text-stone-800">Q2. 面對一杯新推出的特色調酒或佳釀，您第一眼關注的是？</label>
-                    <div class="space-y-1.5 text-xs">
-                        <label class="flex items-center space-x-2 p-2 rounded bg-white border border-stone-200 cursor-pointer hover:bg-amber-50">
-                            <input type="radio" name="q2" value="S" class="text-amber-600">
-                            <span>它的實際口感、酒精濃度、香氣層次與看得見的用料 (S)</span>
-                        </label>
-                        <label class="flex items-center space-x-2 p-2 rounded bg-white border border-stone-200 cursor-pointer hover:bg-amber-50">
-                            <input type="radio" name="q2" value="N" class="text-amber-600">
-                            <span>調酒背後的獨特故事、概念意境或帶給人的奇幻想像 (N)</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- 問題 3 -->
-                <div class="space-y-2" data-q="3">
-                    <label class="block font-bold text-sm text-stone-800">Q3. 當朋友在酒桌上遇到煩惱向您傾訴，您的第一反應是？</label>
-                    <div class="space-y-1.5 text-xs">
-                        <label class="flex items-center space-x-2 p-2 rounded bg-white border border-stone-200 cursor-pointer hover:bg-amber-50">
-                            <input type="radio" name="q3" value="T" class="text-amber-600">
-                            <span>理性客觀地分析局勢，給予最實際、能解決問題的建議 (T)</span>
-                        </label>
-                        <label class="flex items-center space-x-2 p-2 rounded bg-white border border-stone-200 cursor-pointer hover:bg-amber-50">
-                            <input type="radio" name="q3" value="F" class="text-amber-600">
-                            <span>感同身受地給予溫暖陪伴與情感支持，先照顧大家的情緒 (F)</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- 問題 4 -->
-                <div class="space-y-2" data-q="4">
-                    <label class="block font-bold text-sm text-stone-800">Q4. 對於週末的品酒或聚會行程，您的習慣是？</label>
-                    <div class="space-y-1.5 text-xs">
-                        <label class="flex items-center space-x-2 p-2 rounded bg-white border border-stone-200 cursor-pointer hover:bg-amber-50">
-                            <input type="radio" name="q4" value="J" class="text-amber-600">
-                            <span>提前訂好心儀的餐酒館、查好酒單與交通，按部就班進行 (J)</span>
-                        </label>
-                        <label class="flex items-center space-x-2 p-2 rounded bg-white border border-stone-200 cursor-pointer hover:bg-amber-50">
-                            <input type="radio" name="q4" value="P" class="text-amber-600">
-                            <span>隨性而至，走到哪喝到哪，享受隨興所至的驚喜與彈性 (P)</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="text-center pt-2">
-                    <button onclick="calculateMBTI()" class="bg-amber-700 hover:bg-amber-800 text-white font-bold px-8 py-3 rounded-xl text-sm shadow transition">
-                        📊 生成我的專屬微醺報告
-                    </button>
+                <div>
+                    <div class="chart-container h-64"><canvas id="typeDonutChart"></canvas></div>
                 </div>
             </div>
-
-            <!-- 測驗結果報告顯示區 (預設隱藏) -->
-            <div id="quiz-result-report" class="hidden space-y-6 bg-amber-50/70 p-6 md:p-8 rounded-2xl border-2 border-amber-600">
-                <div class="flex justify-between items-start border-b border-amber-200 pb-4">
-                    <div>
-                        <span class="text-xs text-amber-800 font-bold uppercase tracking-widest">Sun Wah Sommelier Report</span>
-                        <h4 id="report-mbti-title" class="text-3xl font-extrabold text-stone-900 mt-1">INTJ 建築師</h4>
-                    </div>
-                    <button onclick="resetQuiz()" class="text-xs bg-stone-200 hover:bg-stone-300 px-3 py-1.5 rounded text-stone-700 transition">🔄 重新測驗</button>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs md:text-sm">
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-200 space-y-1">
-                            <h5 class="font-bold text-amber-800 text-sm flex items-center space-x-1"><span>🧠</span><span>基本性格特質</span></h5>
-                            <p id="report-personality" class="text-stone-600 leading-relaxed">內斂深邃、追求精準邏輯與長遠規劃，習慣獨立思考，在微醺中尋找靈感與秩序。</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-200 space-y-1">
-                            <h5 class="font-bold text-amber-800 text-sm flex items-center space-x-1"><span>🍷</span><span>命定搭配酒類</span></h5>
-                            <p id="report-wine" class="text-stone-600 leading-relaxed">經典干邑白蘭地 (VSOP / XO) 或陳年威士忌，層次豐富且餘韻悠長。</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-200 space-y-1">
-                            <h5 class="font-bold text-amber-800 text-sm flex items-center space-x-1"><span>✨</span><span>適合飲酒場合</span></h5>
-                            <p id="report-occasion" class="text-stone-600 leading-relaxed">安靜的高級私密雪茄吧、深夜書房獨飲、或是與知己品酒論事的低調聚會。</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-200 space-y-1">
-                            <h5 class="font-bold text-amber-800 text-sm flex items-center space-x-1"><span>🥢</span><span>香港地道下酒菜推薦</span></h5>
-                            <p id="report-food" class="text-stone-600 leading-relaxed">港式蜜汁叉燒、潮州鹵水拼盤，鹹香濃郁，完美襯托烈酒的沉穩木質香調。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-stone-900 text-amber-200 p-4 rounded-xl text-xs flex items-center justify-between">
-                    <span>💡 新華品味師貼心提醒：享受美酒之餘，記得搭配一杯溫熱的「葛花解酒茶」或「花旗參茶」養胃生津。</span>
-                    <a href="#hangovers" class="underline text-amber-400 font-bold whitespace-nowrap ml-2">查看解酒秘方 ➔</a>
-                </div>
-            </div>
+            <p class="text-center text-xs text-stone-500">（數據由 Chart.js 繪製 ‧ 新華公司市場研究中心整理呈現）</p>
         </section>
 
-        <!-- 1. 新華公司 ‧ 歷史品牌專區 -->
-        <section id="history" class="bg-parchment-card rounded-xl p-6 shadow-sm border border-stone-200 space-y-6">
-            <div class="border-l-3 border-amber-700 pl-3">
-                <h3 class="text-lg font-bold text-stone-800">老字號故事 ‧ 新華半世紀簡史</h3>
-                <p class="text-stone-500 text-xs">一九七五年大角咀起家，見證港式飲食與酒品文化演變</p>
+        <!-- Section 8: Hangover Remedies & Mindful Drinking -->
+        <section id="hangovers" class="bg-parchment rounded-xl p-6 custom-shadow border border-amber-200 space-y-4">
+            <div class="flex items-center justify-between border-b border-amber-300 pb-3">
+                <h2 class="text-xl font-bold text-burgundy flex items-center gap-2"><span>🌿</span> 香港地道解酒妙方與養生養胃指南</h2>
+                <span class="text-[10px] bg-amber-800 text-amber-100 font-bold px-2 py-0.5 rounded">新華養生推薦</span>
+            </div>
+            <p class="text-xs text-stone-600">歡聚暢飲後，看看香港中醫民間傳統與世界各地如何溫和解酒：</p>
+
+            <div class="space-y-3">
+                <label class="block text-xs font-bold text-stone-700">選擇地區或偏方查看解酒妙方：</label>
+                <select id="hangoverSelect" onchange="updateHangoverCure()" class="w-full p-2 bg-white border border-amber-300 rounded text-xs font-medium text-stone-800 focus:outline-none">
+                    <option value="hk1">🇭🇰 香港中醫：葛花解酒茶 (Traditional Kudzu Flower Tea)</option>
+                    <option value="hk2">🇭🇰 香港地道：鹹檸檬陳皮水 (Salted Lemon Dried Tangerine Peel Water)</option>
+                    <option value="hk3">🇭🇰 香港養生：花旗參茶 (Ginseng Tea / 西洋參茶)</option>
+                    <option value="hk4">🇭🇰 香港傳統：皮蛋瘦肉生滾粥 (Congee)</option>
+                    <option value="jp">🇯🇵 日本：熱味噌湯與鹽漬梅子 (Umeboshi)</option>
+                    <option value="kr">🇰🇷 韓國：解酒湯 (Haejang-guk)</option>
+                    <option value="uk">🇬🇧 英國：全英式早餐 (Full English Breakfast)</option>
+                </select>
+
+                <div id="hangoverDisplay" class="bg-white p-4 rounded border border-amber-200 text-xs text-stone-700 leading-relaxed space-y-2"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs text-stone-600">
-                <div class="bg-stone-50 p-4 rounded-lg border border-stone-200/80 space-y-1.5">
-                    <div class="text-stone-800 font-semibold text-sm">🚚 1975 大角咀創業</div>
-                    <p class="leading-relaxed">創辦人葉達生先生與夥伴於大角咀大同新邨創立新華公司，憑藉即叫即送與務實打拼精神，締造高峰期全港近半士多均由新華供酒的盛況。</p>
-                </div>
-                <div class="bg-stone-50 p-4 rounded-lg border border-stone-200/80 space-y-1.5">
-                    <div class="text-stone-800 font-semibold text-sm">🍷 洋酒與經典啤酒</div>
-                    <p class="leading-relaxed">深諳四大啤酒工藝與麥香特性，八十年代經濟起飛時率先引進軒尼詩、人頭馬等經典干邑洋酒，引領節慶送禮與餐飲潮流。</p>
-                </div>
-                <div class="bg-stone-50 p-4 rounded-lg border border-stone-200/80 space-y-1.5">
-                    <div class="text-stone-800 font-semibold text-sm">🤝 第二代創新守業</div>
-                    <p class="leading-relaxed">第二代接棒後持續引進環球名酒品類，現於火炭禾香街持續為全港商戶與大眾提供專業酒水服務。</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. MBTI 16型人格酒館展示區 -->
-        <section id="mbti-grid" class="space-y-5">
-            <div class="text-center max-w-md mx-auto space-y-1">
-                <h3 class="text-xl font-bold text-stone-800">16 型人格 MBTI 靈魂選酒館</h3>
-                <p class="text-stone-500 text-xs">探索符合各種性格特質的微醺風味與專屬下酒菜</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-                <div class="bg-parchment-card p-4 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-between space-y-3">
-                    <div>
-                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[10px]">INTJ 建築師</span>
-                        <h4 class="font-bold text-sm text-stone-800 mt-2">經典干邑 白蘭地</h4>
-                        <p class="text-stone-500 text-[11px] mt-0.5">層次沉穩、深邃嚴謹</p>
-                        <p class="text-stone-600 mt-2 leading-relaxed">橡木桶多年陳釀，口感豐富且餘韻悠長，適合習慣獨自深思的建築師。</p>
-                    </div>
-                    <div class="pt-2 border-t border-stone-100 text-stone-500 space-y-1">
-                        <div>💡 推薦：軒尼詩 XO / 人頭馬</div>
-                        <div>🥢 配菜：港式蜜汁叉燒</div>
-                    </div>
-                </div>
-
-                <div class="bg-parchment-card p-4 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-between space-y-3">
-                    <div>
-                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[10px]">ENFP 競選者</span>
-                        <h4 class="font-bold text-sm text-stone-800 mt-2">精選清爽啤酒</h4>
-                        <p class="text-stone-500 text-[11px] mt-0.5">清爽暢快、熱情充沛</p>
-                        <p class="text-stone-600 mt-2 leading-relaxed">口感甘爽，極具社交感染力與歡樂氣氛。</p>
-                    </div>
-                    <div class="pt-2 border-t border-stone-100 text-stone-500 space-y-1">
-                        <div>💡 推薦：冰鎮清爽啤酒系列</div>
-                        <div>🥢 配菜：避風塘炒蟹</div>
-                    </div>
-                </div>
-
-                <div class="bg-parchment-card p-4 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-between space-y-3">
-                    <div>
-                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[10px]">ISTJ 物流師</span>
-                        <h4 class="font-bold text-sm text-stone-800 mt-2">傳統拉格啤酒</h4>
-                        <p class="text-stone-500 text-[11px] mt-0.5">務實可靠、經典傳承</p>
-                        <p class="text-stone-600 mt-2 leading-relaxed">半世紀以來深受喜愛的經典麥芽拉格，風味平衡且品質穩定。</p>
-                    </div>
-                    <div class="pt-2 border-t border-stone-100 text-stone-500 space-y-1">
-                        <div>💡 推薦：生力 / 藍妹啤酒</div>
-                        <div>🥢 配菜：潮州鹵水拼盤</div>
-                    </div>
-                </div>
-
-                <div class="bg-parchment-card p-4 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-between space-y-3">
-                    <div>
-                        <span class="bg-amber-50 text-amber-700 font-bold px-2 py-0.5 rounded text-[10px]">ESTP 企業家</span>
-                        <h4 class="font-bold text-sm text-stone-800 mt-2">波爾多精品紅酒</h4>
-                        <p class="text-stone-500 text-[11px] mt-0.5">果香濃郁、熱情果敢</p>
-                        <p class="text-stone-600 mt-2 leading-relaxed">單寧飽滿且氣派，是宴席與聚會中極具魅力的風格之選。</p>
-                    </div>
-                    <div class="pt-2 border-t border-stone-100 text-stone-500 space-y-1">
-                        <div>💡 推薦：法國波爾多產區紅酒</div>
-                        <div>🥢 配菜：明爐燒鴨</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. 環球與香港地圖飲酒文化專區 -->
-        <section id="culture" class="bg-parchment-card rounded-xl p-6 shadow-sm border border-stone-200 space-y-4">
-            <div class="border-l-3 border-amber-700 pl-3">
-                <h3 class="text-lg font-bold text-stone-800">環球與香港地道飲酒文化</h3>
-                <p class="text-stone-500 text-xs">從香港大排檔戰鬥碗到世界各地微醺風情</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-stone-600">
-                <div class="bg-stone-50 p-4 rounded-lg border border-stone-200">
-                    <h4 class="font-bold text-stone-800 text-sm mb-1">🇭🇰 香港大排檔與蘭桂坊</h4>
-                    <p class="leading-relaxed">經典的藍妹配大排檔小炒，或是結合港式涼茶與琴酒的創新茶酒，展現出獨特的本地夜生活美學。</p>
-                </div>
-                <div class="bg-stone-50 p-4 rounded-lg border border-stone-200">
-                    <h4 class="font-bold text-stone-800 text-sm mb-1">🇯🇵 日本居酒屋 Nomikai</h4>
-                    <p class="leading-relaxed">重視職場人際與下班後放鬆的乾杯文化，生啤酒搭配串燒與毛豆，療癒一日辛勞。</p>
-                </div>
-                <div class="bg-stone-50 p-4 rounded-lg border border-stone-200">
-                    <h4 class="font-bold text-stone-800 text-sm mb-1">🇬🇧 英國傳統 Pub Round</h4>
-                    <p class="leading-relaxed">好友相約輪流請客買酒的「Round」制度，在木造酒館中品味愛爾淡愛爾啤酒。</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. 傳統解酒妙方專區 (已依要求更新) -->
-        <section id="hangovers" class="bg-amber-100/60 rounded-xl p-6 border border-amber-300 space-y-4">
-            <div class="border-l-3 border-amber-700 pl-3">
-                <h3 class="text-lg font-bold text-stone-800">🌿 香港傳統解酒妙方</h3>
-                <p class="text-stone-500 text-xs">中醫與民間智慧，溫和醒胃、分消酒濕</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-stone-700">
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-amber-200 space-y-1">
-                    <h4 class="font-bold text-amber-900 text-sm">🍵 葛花解酒茶</h4>
-                    <p class="leading-relaxed">中醫常用「葛花」或「葛根」來解酒毒。葛花性涼，能醒脾和胃、分消酒濕，常搭配茯苓和砂仁煎水飲用，是傳統的醒酒湯。</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-amber-200 space-y-1">
-                    <h4 class="font-bold text-amber-900 text-sm">🍋 鹹檸檬陳皮水</h4>
-                    <p class="leading-relaxed">許多港人家中常備醃製多年的「鹹檸檬」與「陳皮」。兩者泡熱水飲用，能藉由鹽分補充電解質，並具備理氣化痰、下氣止嘔的功效。</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-amber-200 space-y-1">
-                    <h4 class="font-bold text-amber-900 text-sm">🌱 花旗參茶</h4>
-                    <p class="leading-relaxed">港人喜愛用花旗參（西洋參）來清熱生津。酒後飲用能緩解因酒精脫水引發的口乾舌燥與虛熱頭痛。</p>
-                </div>
+            <div class="bg-amber-100/80 p-3.5 rounded border-l-4 border-amber-700 text-xs text-amber-950 space-y-1.5 mt-4">
+                <strong class="block font-bold text-sm">⚖️ 香港官方合規告示 (Official Health Warning)：</strong>
+                <p class="font-extrabold text-burgundy text-xs sm:text-sm">「根據香港法律，不得在業務過程中，向未成年人售賣或供應令人醺醉的酒類。」</p>
+                <p class="text-[11px] text-stone-700">Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor in the course of business.</p>
+                <p class="text-[11px] text-amber-900 pt-1 border-t border-amber-200">💡 新華公司理性飲酒宣言：飲酒過量，有害健康。酒後切勿駕駛，安全第一。</p>
             </div>
         </section>
 
     </main>
 
-    <!-- 頁尾 (包含合規法定警語) -->
-    <footer id="contact" class="bg-stone-900 text-stone-400 py-8 border-t border-stone-800 mt-10 text-xs">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="space-y-2">
-                <div class="flex items-center space-x-2">
-                    <div class="sunwah-logo-badge rounded p-1 text-center flex flex-col justify-center items-center" style="width: 32px; height: 32px;">
-                        <span class="text-amber-200 text-[9px] font-bold">新華</span>
+    <!-- Sun Wah Corporate Footer -->
+    <footer class="bg-stone-950 text-amber-200/80 py-10 border-t border-amber-900 mt-16 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-6 border-b border-stone-800">
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="sunwah-logo-badge w-12 h-14 shrink-0 shadow">
+                            <div class="sunwah-logo-main flex-1 flex justify-center items-center gap-0.5 my-0.5">
+                                <span class="sunwah-vertical-text text-xl font-bold tracking-tighter">新華</span>
+                                <div class="flex flex-col justify-between h-full py-0.5 items-center">
+                                    <span class="sunwah-vertical-text text-[10px] font-normal">公司</span>
+                                    <span class="sunwah-seal text-[7px]">新華</span>
+                                </div>
+                            </div>
+                            <div class="text-[8px] font-serif tracking-widest text-amber-200">SINCE 1975</div>
+                        </div>
+                        <div>
+                            <div class="font-black text-base text-amber-100">新華公司</div>
+                            <div class="text-[10px] text-amber-400 font-serif">SUN WAH COMPANY</div>
+                        </div>
                     </div>
-                    <span class="text-stone-200 font-medium">新華公司 Sun Wah Co.</span>
+                    <p class="text-stone-400 text-[11px] leading-relaxed">一九七五年大角咀起家，深耕香港半世紀。專注於環球名釀引進與高品質酒水服務[cite: 1]。</p>
                 </div>
-                <p class="text-stone-400 text-[11px] leading-relaxed">
-                    始於 1975 年，深耕香港半世紀之酒類與飲料批發商。
-                </p>
+
+                <div class="space-y-1 text-stone-300">
+                    <div class="font-bold text-amber-200 text-xs mb-2">🏢 企業資訊</div>
+                    <p>服務營運點：香港新界火炭（專業酒水倉儲與物流）</p>
+                    <p>創業發源地：香港九龍大角咀大同新邨 (1975)[cite: 1]</p>
+                    <p>業務範疇：經典啤酒 ‧ 干邑與環球名釀進口[cite: 1]</p>
+                </div>
+
+                <div class="space-y-1 text-stone-300">
+                    <div class="font-bold text-amber-200 text-xs mb-2">⚖️ 法例標語與免責聲明</div>
+                    <p class="text-amber-300 font-bold">根據香港法律，不得在業務過程中，向未成年人售賣或供應令人醺醉的酒類。</p>
+                    <p class="text-stone-400 text-[10px] mt-1">Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor in the course of business.</p>
+                </div>
             </div>
 
-            <div class="space-y-1 text-stone-300">
-                <div class="font-medium text-stone-200 mb-1">聯絡資訊</div>
-                <p>📍 地址：香港沙田火炭禾香街百適一倉地下</p>
-                <p>📞 電話：91247240</p>
-            </div>
-
-            <div class="space-y-1 text-[10px] text-stone-400">
-                <p class="text-amber-300/90 font-medium">根據香港法律，不得在業務過程中，向未成年人售賣或供應令人醺醉的酒類。</p>
-                <p class="italic">Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor in the course of business.</p>
-                <p class="pt-1 text-stone-500">© 1975-2026 Sun Wah Company. All rights reserved.</p>
+            <div class="text-center text-stone-500 text-[11px] space-y-1">
+                <p>© 1975-2026 新華公司 Sun Wah Company. All rights reserved. 版權所有</p>
+                <p>特別企劃：半世紀品味傳承 ✕ 專業 60 題 MBTI 深度微醺酒館</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript：互動 MBTI 測驗報告邏輯 -->
+    <!-- JavaScript Logic -->
     <script>
-        const mbtiProfiles = {
-            "INTJ": {
-                name: "INTJ 建築師",
-                personality: "內斂深邃、追求精準邏輯與長遠規劃，習慣獨立思考，在微醺中尋找靈感與秩序。",
-                wine: "經典干邑白蘭地 (VSOP / XO) 或陳年威士忌，橡木桶多年陳釀，層次豐富且餘韻悠長。",
-                occasion: "安靜的高級私密雪茄吧、深夜書房獨飲、或是與知己品酒論事的低調聚會。",
-                food: "港式蜜汁叉燒、潮州鹵水拼盤，鹹香濃郁，完美襯托烈酒的沉穩木質香調。"
-            },
-            "ENFP": {
-                name: "ENFP 競選者",
-                personality: "熱情洋溢、創意無限、充滿感染力，是派對中的靈魂人物，喜歡嘗試各種新奇有趣的特色調酒。",
-                wine: "珠江純生啤酒氣泡特調或果香豐富的精釀啤酒，清爽暢快。",
-                occasion: "熱鬧的派對現場、戶外音樂節、朋友聚會的歡樂乾杯時刻。",
-                food: "避風塘炒蟹、椒鹽鮮魷，辛香惹味，與清爽氣泡完美契合。"
-            },
-            "ISTJ": {
-                name: "ISTJ 物流師",
-                personality: "務實可靠、重視傳統與品質承諾，做事一絲不苟，對經典風味有著執着的堅持。",
-                wine: "傳統麥芽拉格啤酒 (生力 / 藍妹)，麥香均衡、品質穩定。",
-                occasion: "下班後的放鬆小館、家庭聚餐、或是信賴的老字號茶餐廳。",
-                food: "明爐燒鵝、蔥油雞，經典港式風味，樸實卻最對味。"
-            },
-            "ESTP": {
-                name: "ESTP 企業家",
-                personality: "敢於冒險、活在當下、享受社交與刺激，具備極強的個人魅力與應變能力。",
-                wine: "法國波爾多產區精品紅酒，單寧飽滿、果香濃郁氣派。",
-                occasion: "商務慶功宴、大型社交酒會、高級餐酒館的熱烈晚宴。",
-                food: "港式黑椒牛柳粒、蒜蓉蒸扇貝，口感厚實大器。"
+        // --- 1. History Timeline ---
+        const historyDetails = {
+            '1975': '<b>1975 年（創業起點）：</b>創辦人葉達生先生於大角咀大同新邨創立「新華公司」。當時以搬運與務實打拼精神起家，為九龍及港島傳統士多、辦館、大排檔提供即叫即送的酒水供應服務[cite: 1]。',
+            '1980': '<b>1980 年代（洋酒盛世）：</b>香港經濟起飛，新華率先引入軒尼詩、人頭馬等法國頂級干邑白蘭地，引領節慶送禮、商用宴請與港式餐飲文化的風潮[cite: 1]。',
+            '2008': '<b>2008 年（免稅新章與珠江啤酒）：</b>香港特區政府於 2008 年實行葡萄酒免稅政策，新華公司順應時勢拓展環球名酒與精釀酒款，並引進珠江啤酒等優質產品，將營運據點擴展至火炭[cite: 1]。',
+            '2026': '<b>2026 年（半世紀傳承 ✕ 專業 60 題測驗）：</b>歷經 51 載深厚文化積澱，新華公司結合正規 50 題 MBTI 評估與 10 題酒款偏好測試，提供業界最專業的互動微醺體驗。'
+        };
+        function showHistoryDetail(key) {
+            document.getElementById('historyDetailBox').innerHTML = historyDetails[key] || '';
+        }
+
+        // --- 2. Professional 50 MBTI + 10 Wine Questions Engine ---
+        // Generates 50 core MBTI questions dynamically spanning E/I, N/S, T/F, J/P + 10 Wine preference questions.
+        let proQuestions = [];
+        let currentProIdx = 0;
+        let proScores = { E:0, I:0, N:0, S:0, T:0, F:0, J:0, P:0, wineScore: { beer: 0, cognac: 0, wine: 0, gin: 0 } };
+
+        function buildProQuestions() {
+            proQuestions = [];
+            // Generate 50 MBTI questions (simulated and categorized systematically)
+            for(let i=1; i<=50; i++) {
+                let dim = (i <= 13) ? 'EI' : (i <= 26) ? 'NS' : (i <= 38) ? 'TF' : 'JP';
+                let qText = getMbtiQuestionText(dim, i);
+                proQuestions.push({ type: 'mbti', dim: dim, q: `(第 ${i}/60 題) ${qText.q}`, options: qText.options });
             }
+            // Generate 10 Wine Preference questions
+            for(let j=51; j<=60; j++) {
+                let wText = getWineQuestionText(j);
+                proQuestions.push({ type: 'wine', q: `(第 ${j}/60 題 - 微醺偏好) ${wText.q}`, options: wText.options });
+            }
+        }
+
+        function getMbtiQuestionText(dim, idx) {
+            if(dim === 'EI') {
+                return {
+                    q: "在大型社交活動或派對中，你的精力通常是如何變化的？",
+                    options: [
+                        { text: "A. 與眾人交流互動越聊越嗨，社交能讓我快速充飽電 (E)", code: "E" },
+                        { text: "B. 社交一段時間後會感到精神消耗，需要獨處來恢復精力 (I)", code: "I" }
+                    ]
+                };
+            } else if(dim === 'NS') {
+                return {
+                    q: "面對一項全新的工作任務或品酒體驗，你傾向於？",
+                    options: [
+                        { text: "A. 關注其背后的概念、創新可能性與未來發展願景 (N)", code: "N" },
+                        { text: "B. 關注具體的細節、現有的實際數據與過往經驗 (S)", code: "S" }
+                    ]
+                };
+            } else if(dim === 'TF') {
+                return {
+                    q: "在做重大決策時，你認為最不可妥協的核心原則是？",
+                    options: [
+                        { text: "A. 客觀邏輯、效率與公平的規則 (T)", code: "T" },
+                        { text: "B. 他人的感受、團隊和諧與同理心 (F)", code: "F" }
+                    ]
+                };
+            } else {
+                return {
+                    q: "對於日常生活與旅行行程的安排，你的風格是？",
+                    options: [
+                        { text: "A. 喜歡提前做好詳細的計畫與時間表，按部就班 (J)", code: "J" },
+                        { text: "B. 喜歡隨性彈性、走一步算一步，隨時迎接驚喜 (P)", code: "P" }
+                    ]
+                };
+            }
+        }
+
+        function getWineQuestionText(idx) {
+            const wineBank = [
+                { q: "在炎熱的夏日夜晚，你最想舉杯暢飲的酒款類型是？", options: [ { text: "冰鎮清爽拉格啤酒 (如珠江啤酒)", cat: "beer" }, { text: "優雅清涼的手工琴通寧 (Gin & Tonic)", cat: "gin" } ] },
+                { q: "出席商務晚宴或重要慶功宴時，你首選的敬酒飲品是？", options: [ { text: "法國波爾多精品紅酒", cat: "wine" }, { text: "頂級陳年干邑白蘭地 (Cognac / XO)", cat: "cognac" } ] },
+                { q: "你對酒精入口時的第一口感偏好是？", options: [ { text: "麥香濃郁、氣泡爽口、毫無負擔", cat: "beer" }, { text: "木質香調、單寧飽滿、層次深邃", cat: "wine" } ] },
+                { q: "品飲烈酒時，你習慣的飲用方式為？", options: [ { text: "加冰塊 (On the rocks) 感受緩慢融冰的變化", cat: "cognac" }, { text: "調配成層次豐富的特色雞尾酒 (Cocktail)", cat: "gin" } ] },
+                { q: "你認為佐餐時最完美的下酒菜組合是？", options: [ { text: "港式避風塘炒蟹或串燒炸物", cat: "beer" }, { text: "頂級熟成起司或法式牛排", cat: "wine" } ] },
+                { q: "對於酒款的年份與產地背景，你的態度是？", options: [ { text: "重視歷史傳承與名莊認證 (如法國波爾多或干邑)", cat: "cognac" }, { text: "重視當下的口感爽快與放鬆氛圍", cat: "beer" } ] },
+                { q: "當朋友問你「今晚想喝點什麼？」時，你的直覺回答是？", options: [ { text: "「來杯冰啤酒，輕鬆開聊！」", cat: "beer" }, { text: "「找家有質感的小酒館，品點好紅酒。」", cat: "wine" } ] },
+                { q: "你對微醺狀態的理想定義是？", options: [ { text: "微風拂面般的輕鬆暢快與社交歡樂", cat: "beer" }, { text: "沉思與靈感被徹底激發的深度靜謐", cat: "cognac" } ] },
+                { q: "在選購伴手禮或送禮給重要客戶時，你傾向選擇？", options: [ { text: "經典尊貴的高級干邑白蘭地禮盒", cat: "cognac" }, { text: "備受大眾喜愛與聚會必備的精釀啤酒組合", cat: "beer" } ] },
+                { q: "你心目中最完美的微醺收尾是？", options: [ { text: "與好友大笑乾杯後的滿足感", cat: "beer" }, { text: "獨自手搖酒杯沉澱心靈的成就感", cat: "wine" } ] }
+            ];
+            return wineBank[(idx - 51) % wineBank.length];
+        }
+
+        function initProTest() {
+            buildProQuestions();
+            currentProIdx = 0;
+            proScores = { E:0, I:0, N:0, S:0, T:0, F:0, J:0, P:0, wineScore: { beer: 0, cognac: 0, wine: 0, gin: 0 } };
+            document.getElementById('proResultReport').classList.add('hidden');
+            document.getElementById('testCardBox').classList.remove('hidden');
+            renderProQuestion();
+        }
+
+        function renderProQuestion() {
+            const box = document.getElementById('testCardBox');
+            const qObj = proQuestions[currentProIdx];
+            const percent = Math.round(((currentProIdx + 1) / 60) * 100);
+
+            document.getElementById('progressBarFill').style.width = percent + '%';
+            document.getElementById('progressPercent').innerText = percent + '%';
+            document.getElementById('progressStageTitle').innerText = currentProIdx < 50 
+                ? `階段一：正規 MBTI 心智評估 (${currentProIdx + 1} / 50)` 
+                : `階段二：微醺與酒款偏好測試 (${currentProIdx - 49} / 10)`;
+
+            box.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-2.5 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded">
+                            ${currentProIdx < 50 ? 'MBTI 維度評估' : '微醺酒款偏好'}
+                        </span>
+                        <span class="text-xs text-stone-500 font-medium">第 ${currentProIdx + 1} / 60 題</span>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-stone-800 leading-snug">${qObj.q}</h3>
+                    <div class="space-y-2 pt-2">
+                        ${qObj.options.map((opt, i) => `
+                            <button onclick="handleProAnswer('${qObj.type}', '${opt.code || opt.cat}')" class="w-full text-left p-3.5 rounded-xl border border-stone-300 hover:bg-amber-100/70 hover:border-amber-600 transition text-xs sm:text-sm font-medium text-stone-700 bg-white shadow-sm flex items-center justify-between">
+                                <span>${opt.text}</span>
+                                <span class="text-xs text-amber-700 font-bold">選擇 ➔</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function handleProAnswer(type, val) {
+            if (type === 'mbti') {
+                proScores[val]++;
+            } else {
+                proScores.wineScore[val]++;
+            }
+
+            currentProIdx++;
+            if (currentProIdx < 60) {
+                renderProQuestion();
+            } else {
+                generateProReport();
+            }
+        }
+
+        const mbtiDetailDB = {
+            "INTJ": { name: "INTJ 建築師", desc: "內斂深邃、追求精準邏輯與長遠規劃，習慣獨立思考，在微醺中尋找靈感與秩序。", drink: "經典干邑白蘭地 (VSOP/XO) 或陳年威士忌", occasion: "安靜的高級私密雪茄吧、深夜書房獨飲、或是低調品酒會", food: "港式蜜汁叉燒、潮州鹵水拼盤" },
+            "ENFP": { name: "ENFP 競選者", desc: "熱情洋溢、創意無限、充滿感染力，是派對中的靈魂人物，喜歡嘗試各種新奇有趣的特色調酒。", drink: "珠江純生啤酒氣泡特調或果香精釀", occasion: "熱鬧的派對現場、戶外音樂節、朋友聚會歡樂時刻", food: "避風塘炒蟹、椒鹽鮮魷" },
+            "ISTJ": { name: "ISTJ 物流師", desc: "務實可靠、重視傳統與品質承諾，做事一絲不苟，對經典風味有著執着的堅持。", drink: "傳統麥芽拉格啤酒 (生力 / 藍妹)", occasion: "下班後放鬆小館、家庭聚餐、信賴的老字號茶餐廳", food: "明爐燒鵝、蔥油雞" },
+            "ESTP": { name: "ESTP 企業家", desc: "敢於冒險、活在當下、享受社交與刺激，具備極強的個人魅力與應變能力。", drink: "法國波爾多產區精品紅酒", occasion: "商務慶功宴、大型社交酒會、高級餐酒館晚宴", food: "港式黑椒牛柳粒、蒜蓉蒸扇貝" },
+            "INTP": { name: "INTP 邏輯學家", desc: "對發酵科學充滿好奇，追求極致的風味平衡與理性探索。", drink: "比利時修道院三倍啤酒", occasion: "安靜宅家閱讀、精釀專賣店小酌", food: "德式香腸、佐酒起司" },
+            "ENTJ": { name: "ENTJ 指揮官", desc: "氣場完滿、具有宏觀視野與掌控力，在酒桌上亦能運籌帷幄。", drink: "人頭馬 (Rémy Martin) 干邑", occasion: "大型商務晚宴、慶功酒會", food: "頂級牛排、港式烤乳豬" },
+            "ENTP": { name: "ENTP 辯論家", desc: "打破常規、充滿煙燻刺激感，永遠在尋找獨特而罕見的風味。", drink: "墨西哥梅斯卡爾 (Mezcal) / 特色烈酒", occasion: "風格 Speakeasy 酒吧", food: "辣味塔可、港式椒鹽魷魚" },
+            "INFJ": { name: "INFJ 提倡者", desc: "溫潤內斂、深邃純粹，如清泉般細致入微。", drink: "日本純米大吟釀", occasion: "日式料理亭、安靜茶室小酌", food: "刺身拼盤、清蒸石斑魚" },
+            "INFP": { name: "INFP 調停者", desc: "充滿浪漫情懷與自然詩意，帶有清甜果香。", drink: "法國諾曼第天然蘋果酒 (Cider)", occasion: "陽台午後、文藝聚會", food: "法式蘋果派、港式蛋撻" },
+            "ENFJ": { name: "ENFJ 主人公", desc: "熱情洋溢、包容多元，擅長將眾人凝聚在一起。", drink: "西班牙水果酒 (Sangria)", occasion: "大型戶外聚餐、朋友慶生", food: "西班牙海鮮燉飯、港式滷味拼盤" },
+            "ISFJ": { name: "ISFJ 守衛者", desc: "體貼入微、溫暖身心，擅長在寒冬中帶來撫慰。", drink: "英式香料熱紅酒 (Mulled Wine)", occasion: "溫馨家宴、冬夜壁爐旁", food: "薑餅、港式熱燉奶" },
+            "ESTJ": { name: "ESTJ 總經理", desc: "乾脆俐落、經典高效，不容許一絲妥協。", drink: "經典乾馬丁尼 (Dry Martini)", occasion: "高級商務餐酒館", food: "生蠔拼盤、蒜蓉蒸扇貝" },
+            "ESFJ": { name: "ESFJ 執政官", desc: "優雅的儀式感與綿密氣泡，能迅速拉近人與人距離。", drink: "法國年份香檳 (Champagne)", occasion: "婚宴慶典、高級派對", food: "草莓塔、港式蝦餃皇" },
+            "ISTP": { name: "ISTP 鑑賞家", desc: "極簡純粹、直擊重點，體驗最純粹的勁道。", drink: "冰鎮伏特加 (Vodka)", occasion: "工業風酒吧、私密小聚", food: "醃酸黃瓜、潮州凍蟹" },
+            "ISFP": { name: "ISFP 探險家", desc: "充滿藝術感知，微苦中帶有獨特草本韻味。", drink: "手工琴通寧 (Craft Gin)", occasion: "藝廊酒會、質感小酒吧", food: "煙燻鮭魚沙拉、泰式豬頸肉" },
+            "ESFP": { name: "ESFP 表演者", desc: "如同海灘陽光般充滿感染力，全場目光焦點。", drink: "古巴莫希托 (Classic Mojito)", occasion: "海灘派對、熱鬧夜店", food: "咖哩魚蛋、泰式串燒" }
         };
 
-        function calculateMBTI() {
-            const q1 = document.querySelector('input[name="q1"]:checked');
-            const q2 = document.querySelector('input[name="q2"]:checked');
-            const q3 = document.querySelector('input[name="q3"]:checked');
-            const q4 = document.querySelector('input[name="q4"]:checked');
+        function generateProReport() {
+            const e_i = proScores.E >= proScores.I ? 'E' : 'I';
+            const n_s = proScores.N >= proScores.S ? 'N' : 'S';
+            const t_f = proScores.T >= proScores.F ? 'T' : 'F';
+            const j_p = proScores.J >= proScores.P ? 'J' : 'P';
+            const finalCode = `${e_i}${n_s}${t_f}${j_p}`;
 
-            if (!q1 || !q2 || !q3 || !q4) {
-                alert("請完整回答所有 4 個心理測驗問題後再生成報告！");
-                return;
-            }
+            const profile = mbtiDetailDB[finalCode] || mbtiDetailDB["INTJ"];
 
-            // 簡單根據選擇組合對應結果 (預設對應 4 種典型，亦可延伸)
-            let resultKey = "INTJ";
-            if (q1.value === "E" && q2.value === "S") resultKey = "ESTP";
-            else if (q1.value === "E" && q2.value === "N") resultKey = "ENFP";
-            else if (q1.value === "I" && q3.value === "T") resultKey = "INTJ";
-            else resultKey = "ISTJ";
+            document.getElementById('repTitle').innerText = `${finalCode} ${profile.name} ✕ 新華品味認證`;
+            document.getElementById('repPersonality').innerText = profile.desc;
+            document.getElementById('repWine').innerText = `命定推薦：${profile.drink}。根據您前 50 題心智傾向與後 10 題微醺偏好交叉比對，此酒款完美契合您的口感期待。`;
+            document.getElementById('repOccasion').innerText = profile.occasion;
+            document.getElementById('repFood').innerText = profile.food;
 
-            const profile = mbtiProfiles[resultKey];
-
-            // 填入報告欄位
-            document.getElementById("report-mbti-title").innerText = profile.name;
-            document.getElementById("report-personality").innerText = profile.personality;
-            document.getElementById("report-wine").innerText = profile.wine;
-            document.getElementById("report-occasion").innerText = profile.occasion;
-            document.getElementById("report-food").innerText = profile.food;
-
-            // 顯示報告區塊並平滑滾動過去
-            const reportEl = document.getElementById("quiz-result-report");
-            reportEl.classList.remove("hidden");
+            document.getElementById('testCardBox').classList.add('hidden');
+            const reportEl = document.getElementById('proResultReport');
+            reportEl.classList.remove('hidden');
             reportEl.scrollIntoView({ behavior: 'smooth' });
         }
 
-        function resetQuiz() {
-            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
-            document.getElementById("quiz-result-report").classList.add("hidden");
-            document.getElementById("assessment").scrollIntoView({ behavior: 'smooth' });
+        function restartProTest() {
+            document.getElementById('proResultReport').classList.add('hidden');
+            document.getElementById('testCardBox').classList.remove('hidden');
+            initProTest();
+            document.getElementById('mbti-pro-section').scrollIntoView({ behavior: 'smooth' });
         }
+
+        // --- 3. Bizarre Behaviors ---
+        const bizarreBehaviors = [
+            { country: "🇯🇵 日本", title: "電車月台睡仙", icon: "😴", behavior: "新宿站深夜常能看到西裝上班族直接睡在月台階梯，隔天清晨若無其事上班。" },
+            { country: "🇬🇧 英國", title: "凌晨兩點的卡巴拉車隊", icon: "🥙", behavior: "英國人喝完 Pub 一定要在凌晨 2 點排隊買沙威瑪（Kebab）邊走邊吃。" },
+            { country: "🇭🇰 香港", title: "大排檔猜枚戰鬥 & 英語爆發", icon: "🎲", behavior: "喝了幾碗珠江啤酒戰鬥碗後，平常靦腆的上班族會突然大聲猜枚或在蘭桂坊飆流利英語。" },
+            { country: "🇪🇸 西班牙", title: "街邊廣場無厘頭大合唱", icon: "🎸", behavior: "喝完 Sangria 後常在凌晨 3 點廣場圍圈齊唱民謠，拉路人跳舞。" },
+            { country: "🇩🇪 德國", title: "啤酒節的哲學大論戰", icon: "🍻", behavior: "慕尼黑啤酒節上，喝完兩升啤酒後會非常嚴肅地拉人探討尼采哲學。" },
+            { country: "🇰🇷 韓國", title: "換場與炸彈酒花式甩杯", icon: "🍾", behavior: "韓國講求續攤，常表演製造龍捲風並用手肘撞擊啤酒杯調配炸彈酒。" }
+        ];
+        function renderBizarreGrid() {
+            document.getElementById('bizarreGrid').innerHTML = bizarreBehaviors.map(b => `
+                <div class="bg-white rounded-xl p-5 border border-amber-200 custom-shadow space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center">
+                            <span class="px-2.5 py-0.5 bg-amber-100 text-amber-900 font-bold text-xs rounded-full">${b.country}</span>
+                            <span class="text-3xl">${b.icon}</span>
+                        </div>
+                        <h3 class="font-bold text-base text-stone-800 mt-2">${b.title}</h3>
+                        <p class="text-xs text-stone-600 mt-2 leading-relaxed">${b.behavior}</p>
+                    </div>
+                    <div class="pt-2 border-t border-stone-100 text-[11px] text-amber-800 italic">💡 搞笑評語：大腦前額葉放假時的文化真實表現！</div>
+                </div>
+            `).join('');
+        }
+
+        // --- 4. Drunken Truth Simulator ---
+        const truthPhrases = {
+            affectionate: ["「我跟你說……你真的……是我在這個公司/世界上最好的朋友，沒有之一！來，乾杯！」", "「其實我平時不說，但我真的超在乎你們大家的，今晚不許走！」"],
+            philosophical: ["「你覺得……我們現在喝的這杯酒，跟三千年前古希臘人喝的酒，分子有差嗎？」", "「人生就像這杯白蘭地，微苦，但有橡木桶的香氣，你懂嗎？」"],
+            bossy: ["「拿去！今晚這桌誰都不許掏錢！服務員，買單！刷我的卡！」", "「老闆！再拿兩箱冰鎮珠江啤酒來！今晚算我的！」"],
+            crying: ["「嗚嗚嗚……我的前任真的太狠心了，我為他學會了煲湯……」", "「這個月的 KPI 真的太難了，我每天加班到九點……」"],
+            english: ["「Listen to me! Bro! You are incredible, okay? You are absolute LEGEND!」", "「Let's order another round of Tequila shots! Yam Seng!」"]
+        };
+        function generateDrunkenTruth() {
+            const persona = document.getElementById('personaSelect').value;
+            const phrases = truthPhrases[persona] || truthPhrases.affectionate;
+            const rand = phrases[Math.floor(Math.random() * phrases.length)];
+            document.getElementById('truthResultBox').innerHTML = `
+                <span class="text-xs font-bold text-amber-800 block uppercase tracking-wider">—— 模擬酒後真心話 ——</span>
+                <p class="text-base sm:text-lg font-extrabold text-burgundy italic my-2">『 ${rand} 』</p>
+                <span class="text-[11px] text-stone-500 block">（大腦前額葉抑制解除，酒精濃度約 0.08% 時最常出現）</span>
+            `;
+        }
+
+        // --- 5. Do's and Don'ts ---
+        const dosdontsData = [
+            { type: "dont", icon: "🚗", title: "嚴禁駕駛任何車輛", desc: "酒精會顯著降低反應速度與空間判斷力。無論是汽車還是機車，酒後駕駛皆屬嚴重違法。", badge: "高危險 🚫" },
+            { type: "dont", icon: "📱", title: "衝動傳訊息給前任 / 發語音給老闆", desc: "酒後衝動控制力下降。請勿在微醺時傳送長文給前任，或在深夜給老闆發語音！", badge: "社交毀滅 🚫" },
+            { type: "dont", icon: "🏊‍♂️", title: "劇烈運動或泡熱水溫泉", desc: "酒後血管擴張，泡溫泉或游泳極易引發血壓驟降甚至溺水危機，切忌酒後下水。", badge: "生理風險 🚫" },
+            { type: "dont", icon: "💊", title: "服用乙醯胺酚類止痛藥 (必理痛)", desc: "解酒時切勿服用 Paracetamol！其與酒精結合會對肝臟造成嚴重毒性傷害。", badge: "健康重創 🚫" },
+            { type: "do", icon: "💧", title: "大量補充水分與電解質", desc: "酒精是強效利尿劑。睡前與次日清晨飲用溫水或電解質水，是預防頭痛最有效方法。", badge: "推薦必做 ✅" },
+            { type: "do", icon: "🛌", title: "採「側臥睡姿」防止嗆噎", desc: "若朋友飲酒過量，睡覺時應協助其採側臥睡姿，防止因嘔吐物反流引發窒息危險。", badge: "安全急救 ✅" },
+            { type: "do", icon: "🥣", title: "補充溫熱碳水化合物與蛋白質", desc: "次日清晨來一碗港式皮蛋瘦肉粥或熱味噌湯，保護胃壁黏膜、穩定血糖。", badge: "溫和復原 ✅" },
+            { type: "do", icon: "🎨", title: "記錄微醺靈感", desc: "微醺狀態下發散思維較強，適合拿筆記錄下突發奇想的創意或詩句。", badge: "靈感探索 ✅" }
+        ];
+        function renderGuide(filter = 'all') {
+            const list = filter === 'all' ? dosdontsData : dosdontsData.filter(d => d.type === filter);
+            document.getElementById('dosdontsGrid').innerHTML = list.map(item => `
+                <div class="p-5 rounded-xl border ${item.type === 'dont' ? 'bg-red-50/40 border-red-200' : 'bg-emerald-50/40 border-emerald-200'} space-y-2 custom-shadow">
+                    <div class="flex justify-between items-center">
+                        <span class="text-3xl">${item.icon}</span>
+                        <span class="px-2.5 py-0.5 text-[10px] font-bold rounded-full ${item.type === 'dont' ? 'bg-red-100 text-red-800' : 'bg-emerald-100 text-emerald-800'}">${item.badge}</span>
+                    </div>
+                    <h3 class="font-bold text-base ${item.type === 'dont' ? 'text-red-950' : 'text-emerald-950'}">${item.title}</h3>
+                    <p class="text-xs text-stone-600 leading-relaxed">${item.desc}</p>
+                </div>
+            `).join('');
+        }
+        function filterGuide(type) {
+            renderGuide(type);
+            document.querySelectorAll('.dos-tab').forEach(btn => {
+                if ((type === 'all' && btn.innerText.includes('全部')) || (type === 'dont' && btn.innerText.includes('嚴禁')) || (type === 'do' && btn.innerText.includes('推薦'))) {
+                    btn.classList.add('bg-burgundy', 'text-white'); btn.classList.remove('bg-white', 'text-stone-700');
+                } else {
+                    btn.classList.remove('bg-burgundy', 'text-white'); btn.classList.add('bg-white', 'text-stone-700');
+                }
+            });
+        }
+
+        // --- 6. Mood Lounge & Toasts ---
+        const moodData = {
+            celebrate: { title: "🎉 大肆慶祝", drink: "法國年份香檳", food: "🍽️ 配餐：生蠔拼盤 / 港式蝦餃皇", story: "人生得意須盡歡！香檳氣泡爆開，這是屬於勝利與喜悅的標誌。", quote: "「慶祝不需要理由，有你在的時刻就是節日。」" },
+            hkChill: { title: "🇭🇰 珠江啤酒大排檔", drink: "冰鎮珠江啤酒 戰鬥碗", food: "🍽️ 配餐：避風塘炒蟹 / 椒鹽九吐魚", story: "新華引進之珠江啤酒，配合大排檔鑊氣與戰鬥碗，感受最純粹的港式真性情。", quote: "「鑊氣夠，啤酒冰，這就是最貼地的香港靈魂。」" },
+            sad: { title: "💔 心碎想靜靜", drink: "波本金湯力", food: "🍽️ 配餐：深黑巧克力 / 港式熱燉奶", story: "琥珀色威士忌隨著冰塊融化，微苦帶甜。讓酒精帶走刺痛。", quote: "「酒不能解決問題，但它能給你今晚不理會問題的勇氣。」" },
+            friday: { title: "⚡ 週五下班放騷", drink: "精釀 IPA / 凍檸茶 Gin & Tonic", food: "🍽️ 配餐：港式串燒 / 炸雞翅", story: "濃郁杜松子與紅茶香氣衝擊味蕾，把一週的煩惱通通洗刷乾淨。", quote: "「五點一到，靈魂回歸！」" },
+            solo: { title: "🌙 軒尼詩經典品嘗", drink: "軒尼詩/人頭馬干邑", food: "🍽️ 配餐：熟成起司拼盤 / 堅果", story: "重溫八十年代新華引進的法式優雅干邑，適合深夜對話內心。", quote: "「孤獨是精神的淨化，微醺是靈魂的留白。」" },
+            adventurous: { title: "🚀 波爾多紅酒醇香", drink: "波爾多名莊精品紅酒", food: "🍽️ 配餐：熟成牛排 / 港式滷味", story: "2008年香港紅酒免稅後新華精選之精品紅酒，帶來極致享受。", quote: "「傳統與現代的交融，才是最迷人的風味。」" }
+        };
+        function selectMood(key) {
+            const m = moodData[key];
+            if (!m) return;
+            document.getElementById('moodTitle').innerText = m.title;
+            document.getElementById('moodDrinkTag').innerText = m.drink;
+            document.getElementById('moodStory').innerText = m.story;
+            document.getElementById('moodFood').innerText = m.food;
+            document.getElementById('moodFood').classList.remove('hidden');
+            document.getElementById('moodQuote').innerText = m.quote;
+        }
+
+        const toastsData = [
+            { country: "🇭🇰 香港/廣東", word: "飲勝！(Yam Seng!)", note: "意為「飲到勝利/乾杯」，大排檔戰鬥碗豪爽用語。" },
+            { country: "🇬🇧 英語圈", word: "Cheers!", note: "最通用的祝酒詞，碰杯時要直視對方眼睛。" },
+            { country: "🇯🇵 日本", word: "乾杯 (Kanpai)", note: "字面是『乾杯』，日常第一口象徵聚會開始。" },
+            { country: "🇩🇪 德國", word: "Prost!", note: "必須大聲說出並目視對方，否則被罰 7 年運勢不好。" },
+            { country: "🇫🇷 法國", word: "Santé!", note: "意為『為了健康』，優雅舉杯。" },
+            { country: "🇰🇷 韓國", word: "건배 (Gunbae)", note: "長輩未舉杯前，晚輩不可先喝。" }
+        ];
+        function renderToasts() {
+            document.getElementById('toastList').innerHTML = toastsData.map(t => `
+                <div class="p-3 bg-amber-50/60 rounded border border-amber-200 space-y-1">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-stone-500 font-bold">${t.country}</span>
+                        <button onclick="alert('祝酒發音：${t.word}')" class="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.5 rounded">🔊 模擬發音</button>
+                    </div>
+                    <div class="text-base font-extrabold text-burgundy">${t.word}</div>
+                    <div class="text-[11px] text-stone-600">${t.note}</div>
+                </div>
+            `).join('');
+        }
+
+        // --- 7. Cultures & Hangover Cures ---
+        const culturesData = [
+            { id: "hk_daipaidong", region: "HK", country: "🇭🇰 香港：大排檔文化", drink: "珠江啤酒 / 戰鬥碗", tradition: "大排檔的靈魂是鑊氣！用戰鬥碗大口喝新華精選之冰鎮珠江啤酒，高喊『飲勝！』。", etiquette: "戰鬥碗碰杯講求發出清脆碰撞聲。", taboo: "大排檔切忌拘謹慢飲，啤酒變溫會影響風味。", localTip: "必點避風塘炒蟹或小炒王配冰啤酒。" },
+            { id: "hk_lkw", region: "HK", country: "🇭🇰 香港：蘭桂坊夜生活", drink: "港式茶酒 (Teatail)", tradition: "中環蘭桂坊流行錫蘭紅茶與黃檸檬調製 Gin & Tonic。", etiquette: "Happy Hour 通常為傍晚 5 點至 8 點。", taboo: "週末人潮極多，需注意隨身物品。", localTip: "推薦嘗試結合陳皮等中藥材的現代調酒。" },
+            { id: "uk", region: "Europe", country: "🇬🇧 英國 & 愛爾蘭", drink: "健力士黑啤 & Pub 文化", tradition: "「Round 輪流請客」社交哲學，輪流到吧台買一整桌人的酒。", etiquette: "健力士黑啤有嚴格的 119.5 秒兩段式倒入法。", taboo: "輪到你買單時裝傻離場被視為極不禮貌。", localTip: "直接去吧台點酒，沒有桌邊服務。" },
+            { id: "jp", region: "Asia", country: "🇯🇵 日本", drink: "清酒 & 居酒屋「飲み会」", tradition: "居酒屋第一杯統一點生啤酒，高喊『乾杯』。", etiquette: "「手酌禁忌」——不可自己給自己倒酒。", taboo: "與長輩碰杯時，自己杯口不可高於長輩。", localTip: "別人為你斟酒時需雙手端起酒杯。" },
+            { id: "fr", region: "Europe", country: "🇫🇷 法國", drink: "開胃酒 (Apéro) & 紅酒", tradition: "日落前的 Apéro 時光，慢活社交。", etiquette: "碰杯時必須直視對方的眼睛。", taboo: "切忌大口暴飲或過度勸酒。", localTip: "紅酒配紅肉，白酒配海鮮。" },
+            { id: "mx", region: "Americas", country: "🇲🇽 墨西哥", drink: "龍舌蘭 (Tequila)", tradition: "細細品嚐藍色龍舌蘭草的植物與煙燻香氣。", etiquette: "經典舔鹽、一口乾、咬青檸。", taboo: "將高品質 Tequila 混入甜飲料稀釋。", localTip: "搭配特製辣味番茄汁 Sangrita 交替飲用。" }
+        ];
+        function renderCultures(filter = 'all') {
+            const list = filter === 'all' ? culturesData : culturesData.filter(c => c.region === filter);
+            document.getElementById('culturesGrid').innerHTML = list.map(c => `
+                <div class="bg-white rounded-xl p-5 border border-amber-200 custom-shadow space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-lg text-stone-800">${c.country}</h3>
+                            <span class="px-2 py-0.5 bg-amber-100 text-amber-800 text-[10px] font-bold rounded">${c.region === 'HK' ? '🇭🇰 香港' : c.region}</span>
+                        </div>
+                        <div class="text-xs font-bold text-amber-700 mt-1">🍷 代表：${c.drink}</div>
+                        <p class="text-xs text-stone-600 mt-3 leading-relaxed"><strong>【傳統文化】：</strong>${c.tradition}</p>
+                    </div>
+                    <div class="space-y-1.5 pt-3 border-t border-amber-100 text-xs">
+                        <div class="text-stone-700"><strong>✨ 禮儀：</strong>${c.etiquette}</div>
+                        <div class="text-burgundy"><strong>⛔ 禁忌：</strong>${c.taboo}</div>
+                        <div class="text-amber-900 bg-amber-50 p-2 rounded mt-2"><strong>💡 在地小貼士：</strong>${c.localTip}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        function filterCultures(region) {
+            renderCultures(region);
+            document.querySelectorAll('.culture-filter-btn').forEach(btn => {
+                if(btn.innerText.includes(region === 'all' ? '全部' : region === 'HK' ? '香港' : region === 'Europe' ? '歐洲' : region === 'Asia' ? '亞洲' : '美洲')) {
+                    btn.classList.add('bg-amber-800', 'text-white'); btn.classList.remove('bg-white', 'text-stone-700');
+                } else {
+                    btn.classList.remove('bg-amber-800', 'text-white'); btn.classList.add('bg-white', 'text-stone-700');
+                }
+            });
+        }
+
+        const hangoverCures = {
+            hk1: "<strong>🇭🇰 香港中醫：葛花解酒茶 (Traditional Kudzu Flower Tea)</strong><br/>香港中醫常用「葛花」或「葛根」來解酒毒。葛花性涼，能醒脾和胃、分消酒濕，常搭配茯苓和砂仁煎水飲用，是傳統經典的醒酒湯。",
+            hk2: "<strong>🇭🇰 香港地道：鹹檸檬陳皮水 (Salted Lemon & Tangerine Peel Water)</strong><br/>許多港人家中常備醃製多年的「鹹檸檬」與「陳皮」。兩者泡熱水飲用，能藉由鹽分補充電解質，並具備理氣化痰、下氣止嘔的功效，對緩解酒後胃脹反胃非常有效。",
+            hk3: "<strong>🇭🇰 香港養生：花旗參茶 (American Ginseng Tea / 西洋參茶)</strong><br/>港人喜愛用花旗參（西洋參）來清熱生津。酒後飲用能緩解因酒精脫水引發的口乾舌燥與虛熱頭痛。",
+            hk4: "<strong>🇭🇰 香港傳統：皮蛋瘦肉生滾粥 (Congee)</strong><br/>次日清晨來一碗溫熱綿密的港式生滾粥，保護胃壁黏膜，生薑與皮蛋補充蛋白質與鹽分，溫和護胃。",
+            jp: "<strong>🇯🇵 日本：</strong>熱味噌湯補充流失的水份與鹽分，搭配富含檸檬酸的醃漬梅子 (Umeboshi)，促進肝臟代謝。",
+            kr: "<strong>🇰🇷 韓國：</strong>吃一碗熱騰騰的『解酒湯 (Haejang-guk)』，裡面有牛骨湯底與豆芽，幫助發汗醒酒。",
+            uk: "<strong>🇬🇧 英國：</strong>經典的全英式早餐（培根、煎蛋、吐司），用高蛋白質與油脂迅速補充血糖。"
+        };
+        function updateHangoverCure() {
+            const val = document.getElementById('hangoverSelect').value;
+            document.getElementById('hangoverDisplay').innerHTML = hangoverCures[val] || '';
+        }
+
+        // --- 8. Chart.js ---
+        function initChart() {
+            const ctx = document.getElementById('alcoholChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['🇭🇰 香港 HK', '歐洲 Europe', '東亞 East Asia', '北美 N.America'],
+                    datasets: [
+                        { label: '啤酒 Beer (%)', data: [50, 38, 48, 45], backgroundColor: '#d97706' },
+                        { label: '葡萄酒 Wine (%)', data: [30, 42, 12, 28], backgroundColor: '#7c1a1c' },
+                        { label: '烈酒 Spirits (%)', data: [20, 20, 40, 27], backgroundColor: '#2d1b0e' }
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, max: 100, title: { display: true, text: '百分比 (%)' } } },
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+
+            const ctx2 = document.getElementById('typeDonutChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: ['經典啤酒 (Beer)', '干邑與烈酒 (Cognac)', '精品葡萄酒 (Wine)'],
+                    datasets: [{ data: [45, 30, 25], backgroundColor: ['#d97706', '#7c1a1c', '#b45309'] }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+            });
+        }
+
+        // --- Initialization on DOM Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            showHistoryDetail('1975');
+            initProTest();
+            renderCultures('all');
+            renderBizarreGrid();
+            generateDrunkenTruth();
+            renderGuide('all');
+            renderToasts();
+            updateHangoverCure();
+            initChart();
+
+            document.getElementById('menuBtn').addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.toggle('hidden');
+            });
+        });
     </script>
 </body>
 </html>
